@@ -69,6 +69,16 @@ html {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
+	/* Added flexbox to align icon with text */
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Added styles for nav icon */
+.nav-icon {
+	font-size: 1.5rem;
+	filter: grayscale(0);
 }
 
 .theme-toggle {
@@ -212,7 +222,8 @@ html {
 /* Tools Grid */
 .tools-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	/* Updated grid to show 4 columns on large screens and adjust for the 4th card */
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 2rem;
 	margin-top: 3rem;
 }
@@ -234,8 +245,21 @@ html {
 }
 
 .tool-icon {
+	/* Updated to support both emoji and SVG icons */
 	font-size: 3rem;
 	margin-bottom: 1rem;
+	color: var(--accent);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+}
+
+.tool-icon svg {
+	width: 48px;
+	height: 48px;
+	stroke: var(--accent);
 }
 
 .tool-title {
@@ -334,6 +358,30 @@ html {
 	text-decoration: underline;
 }
 
+/* Added alert box styles for warnings */
+.alert {
+	background-color: rgba(139, 92, 246, 0.1);
+	border: 1px solid var(--accent);
+	border-radius: 0.75rem;
+	padding: 1rem;
+	margin-top: 1.5rem;
+	display: flex;
+	gap: 0.75rem;
+	align-items: flex-start;
+}
+
+.alert svg {
+	flex-shrink: 0;
+	margin-top: 0.125rem;
+	color: var(--accent);
+}
+
+.alert p {
+	color: var(--text-primary);
+	margin: 0;
+	line-height: 1.5;
+}
+
 /* Support Section */
 .support-box {
 	background: linear-gradient(135deg, var(--accent), #ec4899);
@@ -372,6 +420,10 @@ html {
 	transition: transform 0.2s ease, background-color 0.2s ease; /* Updated from all */
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	will-change: transform; /* Added */
+	/* Added flexbox to align heart icon with text */
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .support-link:hover {

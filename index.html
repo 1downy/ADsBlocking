@@ -4,11 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADsBlocking Guide - Take Control of Your Browsing</title>
-    <!-- Preload critical CSS for faster rendering -->
+
+    <!-- Enhanced metadata for better SEO and social sharing -->
+    <title>ADsBlocking Guide - Complete Setup for Ad-Free Browsing</title>
+    <meta name="description"
+        content="Take back control of your browsing experience. Learn how to block ads, trackers, and bypass short-link pages using Firefox, uBlock Origin, and Violentmonkey.">
+    <meta name="keywords"
+        content="ad blocking, ublock origin, firefox, violentmonkey, privacy, ad-free browsing, link bypasser">
+    <meta name="author" content="E4CRYPT3D">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ADsBlocking Guide - Complete Setup for Ad-Free Browsing">
+    <meta property="og:description"
+        content="Take back control of your browsing experience with this comprehensive guide to blocking ads and protecting your privacy.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
-    <!-- Defer script loading for better performance -->
     <script src="script.js" defer></script>
 </head>
 
@@ -16,7 +32,8 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <h2 class="nav-title">ADsBlocking Guide</h2>
+            <!-- Added shield icon next to title -->
+            <h2 class="nav-title"><span class="nav-icon">🛡️</span> ADsBlocking Guide</h2>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2">
@@ -43,8 +60,8 @@
         <div class="hero-content">
             <h1 class="hero-title">Take Back Control of Your Browsing Experience</h1>
             <p class="hero-subtitle">
-                A comprehensive guide to blocking intrusive ads, protecting your privacy, and enhancing your online
-                experience with powerful, free tools.
+                A comprehensive guide to blocking intrusive ads, protecting your privacy, and bypassing annoying
+                short-link pages with powerful, free tools.
             </p>
         </div>
     </section>
@@ -54,47 +71,90 @@
         <div class="container">
             <h2 class="section-title">Essential Tools</h2>
             <p class="section-description">
-                This guide uses three powerful, open-source tools created by dedicated developers who believe in a
-                better web.
+                This guide uses four powerful, open-source tools created by dedicated developers who believe in a better
+                web.
             </p>
 
             <div class="tools-grid">
                 <div class="tool-card">
-                    <div class="tool-icon">🦊</div>
+                    <!-- Changed emoji icon to SVG icon for Firefox -->
+                    <div class="tool-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            <path d="M2 12h20" />
+                        </svg>
+                    </div>
                     <h3 class="tool-title">Firefox Browser</h3>
                     <p class="tool-description">
-                        A privacy-focused browser by Mozilla Foundation that puts you in control. Unlike Chrome, Firefox
-                        prioritizes user privacy over corporate interests.
+                        A privacy-focused browser by <strong>Mozilla Foundation</strong> that puts you in control.
+                        Unlike Chrome, Firefox prioritizes user privacy over corporate interests.
                     </p>
                     <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer"
                         class="tool-link">
-                        Visit Firefox →
+                        Download Firefox →
                     </a>
                 </div>
 
                 <div class="tool-card">
-                    <div class="tool-icon">🛡️</div>
+                    <!-- Changed emoji icon to SVG icon for uBlock Origin -->
+                    <div class="tool-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
                     <h3 class="tool-title">uBlock Origin</h3>
                     <p class="tool-description">
-                        The gold standard in ad blocking, created by Raymond Hill. It's efficient, powerful, and
-                        completely free with no "acceptable ads" compromises.
+                        The gold standard in ad blocking, created by <strong>Raymond Hill</strong>. It's efficient,
+                        powerful, and completely free with no "acceptable ads" compromises.
                     </p>
-                    <a href="https://github.com/gorhill/uBlock" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Visit uBlock Origin →
+                    <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
+                        rel="noopener noreferrer" class="tool-link">
+                        Add to Firefox →
                     </a>
                 </div>
 
                 <div class="tool-card">
-                    <div class="tool-icon">🔧</div>
+                    <!-- Changed emoji icon to SVG icon for Violentmonkey -->
+                    <div class="tool-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                    </div>
                     <h3 class="tool-title">Violentmonkey</h3>
                     <p class="tool-description">
-                        A userscript manager that lets you customize websites with community scripts. Open-source and
-                        actively maintained for modern browsers.
+                        A userscript manager by <strong>Gerald & tophf</strong> that lets you customize websites with
+                        community scripts. Open-source and actively maintained for modern browsers.
                     </p>
-                    <a href="https://violentmonkey.github.io/" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Visit Violentmonkey →
+                    <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
+                        rel="noopener noreferrer" class="tool-link">
+                        Add to Firefox →
+                    </a>
+                </div>
+
+                <!-- Added new card for link bypasser scripts -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </div>
+                    <h3 class="tool-title">Link Bypasser Scripts</h3>
+                    <p class="tool-description">
+                        Powerful userscripts by <strong>Amm0ni4</strong> that automatically bypass annoying short-link
+                        pages, saving you time and frustration.
+                    </p>
+                    <a href="https://github.com/Amm0ni4" target="_blank" rel="noopener noreferrer" class="tool-link">
+                        Visit Amm0ni4's GitHub →
                     </a>
                 </div>
             </div>
@@ -105,7 +165,8 @@
     <section class="section section-alt">
         <div class="container">
             <h2 class="section-title">Setup Guide</h2>
-            <p class="section-description">Follow these simple steps to set up your ad-free browsing experience</p>
+            <p class="section-description">Follow these steps in order to set up your complete ad-free browsing
+                experience</p>
 
             <div class="steps">
                 <!-- Step 1 -->
@@ -149,8 +210,8 @@
                     <div class="step-number">03</div>
                     <h3 class="step-title">Install Violentmonkey</h3>
                     <p class="step-description">
-                        Enable userscripts to customize websites and add extra functionality. Perfect for bypassing
-                        paywalls, removing annoyances, and enhancing sites.
+                        Enable userscripts to customize websites and add extra functionality. This is required for the
+                        link bypasser scripts to work.
                     </p>
                     <ol class="step-list">
                         <li>Visit the <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
@@ -158,14 +219,42 @@
                         <li>Click "Add to Firefox"</li>
                         <li>Confirm the installation</li>
                         <li>The Violentmonkey icon will appear in your toolbar</li>
-                        <li>Browse <a href="https://greasyfork.org/" target="_blank"
-                                rel="noopener noreferrer">Greasyfork</a> to discover useful userscripts</li>
                     </ol>
                 </div>
 
-                <!-- Step 4 -->
+                <!-- Step 4 for link bypasser scripts -->
                 <div id="step-4" class="step-card">
                     <div class="step-number">04</div>
+                    <h3 class="step-title">Install Link Bypasser Scripts</h3>
+                    <p class="step-description">
+                        Install Amm0ni4's link bypasser scripts to automatically skip annoying short-link pages.
+                        <strong>Important:</strong> Violentmonkey must be installed first!
+                    </p>
+                    <ol class="step-list">
+                        <li>Make sure you've completed Step 3 (Violentmonkey installation)</li>
+                        <li>Visit <a href="https://github.com/Amm0ni4" target="_blank"
+                                rel="noopener noreferrer">Amm0ni4's GitHub page</a></li>
+                        <li>Browse their userscript repositories for link bypasser scripts</li>
+                        <li>Click on a script you want to install</li>
+                        <li>Click the "Install" or "Raw" button - Violentmonkey will detect the script</li>
+                        <li>Confirm the installation in the Violentmonkey popup</li>
+                        <li>The script will now automatically bypass supported short-link sites</li>
+                    </ol>
+                    <div class="alert">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        <p><strong>Warning:</strong> If you try to install scripts without Violentmonkey, they won't
+                            work!</p>
+                    </div>
+                </div>
+
+                <!-- Updated old Step 4 to Step 5 -->
+                <div id="step-5" class="step-card">
+                    <div class="step-number">05</div>
                     <h3 class="step-title">Configure & Enjoy</h3>
                     <p class="step-description">
                         Fine-tune your setup for the best experience. Adjust settings, add custom filters, and explore
@@ -174,7 +263,8 @@
                     <ul class="step-list">
                         <li>In uBlock Origin, enable additional filter lists for extra protection</li>
                         <li>Whitelist trusted sites to support creators you love</li>
-                        <li>Install userscripts that match your browsing habits</li>
+                        <li>Install additional userscripts from <a href="https://greasyfork.org/" target="_blank"
+                                rel="noopener noreferrer">Greasyfork</a> that match your needs</li>
                         <li>Regularly update your extensions for the latest features and security patches</li>
                         <li>Enjoy a cleaner, faster, and more private browsing experience!</li>
                     </ul>
@@ -195,14 +285,37 @@
                 <div class="support-links">
                     <a href="https://github.com/gorhill/uBlock#readme" target="_blank" rel="noopener noreferrer"
                         class="support-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
                         Support Raymond Hill (uBlock Origin)
                     </a>
                     <a href="https://github.com/violentmonkey/violentmonkey" target="_blank" rel="noopener noreferrer"
                         class="support-link">
-                        Support Violentmonkey Project
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                        Support Violentmonkey Team
+                    </a>
+                    <a href="https://github.com/Amm0ni4" target="_blank" rel="noopener noreferrer" class="support-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                        Support Amm0ni4 (Link Bypasser Scripts)
                     </a>
                     <a href="https://www.mozilla.org/foundation/" target="_blank" rel="noopener noreferrer"
                         class="support-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
                         Support Mozilla Foundation
                     </a>
                 </div>
