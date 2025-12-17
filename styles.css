@@ -34,7 +34,7 @@ body {
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
 	line-height: 1.6;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition: opacity 0.3s ease; /* Updated from background-color, color */
 }
 
 html {
@@ -49,6 +49,8 @@ html {
 	background-color: var(--bg-card);
 	border-bottom: 1px solid var(--border);
 	backdrop-filter: blur(10px);
+	will-change: transform; /* Added */
+	contain: layout style paint; /* Added */
 }
 
 .nav-container {
@@ -78,8 +80,9 @@ html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.2s ease;
+	transition: transform 0.2s ease, background-color 0.2s ease; /* Updated from all */
 	color: var(--text-primary);
+	will-change: transform; /* Added */
 }
 
 .theme-toggle:hover {
@@ -147,8 +150,9 @@ html {
 	font-size: 1rem;
 	font-weight: 500;
 	text-decoration: none;
-	transition: all 0.2s ease;
+	transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease; /* Updated from all */
 	display: inline-block;
+	will-change: transform; /* Added */
 }
 
 .btn-primary {
@@ -218,11 +222,13 @@ html {
 	border: 1px solid var(--border);
 	border-radius: 1rem;
 	padding: 2rem;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Updated from all */
+	will-change: transform; /* Added */
+	contain: layout style paint; /* Added */
 }
 
 .tool-card:hover {
-	transform: translateY(-5px);
+	transform: translateY(-5px) translateZ(0); /* Updated with translateZ(0) */
 	box-shadow: 0 20px 40px var(--shadow);
 	border-color: var(--accent);
 }
@@ -248,7 +254,7 @@ html {
 	color: var(--accent);
 	text-decoration: none;
 	font-weight: 500;
-	transition: all 0.2s ease;
+	transition: color 0.2s ease; /* Updated from all */
 }
 
 .tool-link:hover {
@@ -270,10 +276,13 @@ html {
 	border-radius: 1rem;
 	padding: 2.5rem;
 	position: relative;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Updated from all */
+	will-change: transform; /* Added */
+	contain: layout style paint; /* Added */
 }
 
 .step-card:hover {
+	transform: translateZ(0); /* Added */
 	box-shadow: 0 10px 30px var(--shadow);
 	border-color: var(--accent);
 }
@@ -317,7 +326,7 @@ html {
 .step-list a {
 	color: var(--accent);
 	text-decoration: none;
-	transition: all 0.2s ease;
+	transition: color 0.2s ease; /* Updated from all */
 }
 
 .step-list a:hover {
@@ -360,13 +369,14 @@ html {
 	border-radius: 0.5rem;
 	text-decoration: none;
 	font-weight: 500;
-	transition: all 0.2s ease;
+	transition: transform 0.2s ease, background-color 0.2s ease; /* Updated from all */
 	border: 1px solid rgba(255, 255, 255, 0.3);
+	will-change: transform; /* Added */
 }
 
 .support-link:hover {
 	background-color: rgba(255, 255, 255, 0.3);
-	transform: translateY(-2px);
+	transform: translateY(-2px) translateZ(0); /* Updated with translateZ(0) */
 }
 
 /* Footer */
