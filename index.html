@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADsBlocking Guide - Take Control of Your Browsing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <h2 class="nav-title">ADsBlocking Guide</h2>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Take Back Control of Your Browsing Experience</h1>
+            <p class="hero-subtitle">
+                A comprehensive guide to blocking intrusive ads, protecting your privacy, and enhancing your online
+                experience with powerful, free tools.
+            </p>
+            <div class="hero-buttons">
+                <a href="#step-1" class="btn btn-primary">Get Started</a>
+                <a href="#tools" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <div class="container">
+            <h2 class="section-title">Essential Tools</h2>
+            <p class="section-description">
+                This guide uses three powerful, open-source tools created by dedicated developers who believe in a
+                better web.
+            </p>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🦊</div>
+                    <h3 class="tool-title">Firefox Browser</h3>
+                    <p class="tool-description">
+                        A privacy-focused browser by Mozilla Foundation that puts you in control. Unlike Chrome, Firefox
+                        prioritizes user privacy over corporate interests.
+                    </p>
+                    <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer"
+                        class="tool-link">
+                        Visit Firefox →
+                    </a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🛡️</div>
+                    <h3 class="tool-title">uBlock Origin</h3>
+                    <p class="tool-description">
+                        The gold standard in ad blocking, created by Raymond Hill. It's efficient, powerful, and
+                        completely free with no "acceptable ads" compromises.
+                    </p>
+                    <a href="https://github.com/gorhill/uBlock" target="_blank" rel="noopener noreferrer"
+                        class="tool-link">
+                        Visit uBlock Origin →
+                    </a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🔧</div>
+                    <h3 class="tool-title">Violentmonkey</h3>
+                    <p class="tool-description">
+                        A userscript manager that lets you customize websites with community scripts. Open-source and
+                        actively maintained for modern browsers.
+                    </p>
+                    <a href="https://violentmonkey.github.io/" target="_blank" rel="noopener noreferrer"
+                        class="tool-link">
+                        Visit Violentmonkey →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Setup Guide</h2>
+            <p class="section-description">Follow these simple steps to set up your ad-free browsing experience</p>
+
+            <div class="steps">
+                <!-- Step 1 -->
+                <div id="step-1" class="step-card">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Install Firefox Browser</h3>
+                    <p class="step-description">
+                        Start by downloading Firefox, a browser built for privacy and customization. It's fast, secure,
+                        and doesn't track your every move.
+                    </p>
+                    <ol class="step-list">
+                        <li>Visit <a href="https://www.mozilla.org/firefox/" target="_blank"
+                                rel="noopener noreferrer">mozilla.org/firefox</a></li>
+                        <li>Download the installer for your operating system</li>
+                        <li>Run the installer and follow the setup wizard</li>
+                        <li>Launch Firefox and make it your default browser (optional)</li>
+                    </ol>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="step-2" class="step-card">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Install uBlock Origin</h3>
+                    <p class="step-description">
+                        Add the most effective ad blocker available. uBlock Origin blocks ads, trackers, and malware
+                        while using minimal system resources.
+                    </p>
+                    <ol class="step-list">
+                        <li>Open Firefox and navigate to the <a
+                                href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
+                                rel="noopener noreferrer">uBlock Origin add-on page</a></li>
+                        <li>Click "Add to Firefox"</li>
+                        <li>Confirm the installation when prompted</li>
+                        <li>The uBlock Origin icon will appear in your toolbar</li>
+                        <li>Click the icon to access settings and customize your blocking preferences</li>
+                    </ol>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="step-3" class="step-card">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Install Violentmonkey</h3>
+                    <p class="step-description">
+                        Enable userscripts to customize websites and add extra functionality. Perfect for bypassing
+                        paywalls, removing annoyances, and enhancing sites.
+                    </p>
+                    <ol class="step-list">
+                        <li>Visit the <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
+                                rel="noopener noreferrer">Violentmonkey add-on page</a></li>
+                        <li>Click "Add to Firefox"</li>
+                        <li>Confirm the installation</li>
+                        <li>The Violentmonkey icon will appear in your toolbar</li>
+                        <li>Browse <a href="https://greasyfork.org/" target="_blank"
+                                rel="noopener noreferrer">Greasyfork</a> to discover useful userscripts</li>
+                    </ol>
+                </div>
+
+                <!-- Step 4 -->
+                <div id="step-4" class="step-card">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Configure & Enjoy</h3>
+                    <p class="step-description">
+                        Fine-tune your setup for the best experience. Adjust settings, add custom filters, and explore
+                        advanced features as you get comfortable.
+                    </p>
+                    <ul class="step-list">
+                        <li>In uBlock Origin, enable additional filter lists for extra protection</li>
+                        <li>Whitelist trusted sites to support creators you love</li>
+                        <li>Install userscripts that match your browsing habits</li>
+                        <li>Regularly update your extensions for the latest features and security patches</li>
+                        <li>Enjoy a cleaner, faster, and more private browsing experience!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="section">
+        <div class="container">
+            <div class="support-box">
+                <h2 class="support-title">Support the Creators</h2>
+                <p class="support-description">
+                    These tools are created and maintained by passionate developers who offer them for free. Consider
+                    supporting their work:
+                </p>
+                <div class="support-links">
+                    <a href="https://github.com/gorhill/uBlock#readme" target="_blank" rel="noopener noreferrer"
+                        class="support-link">
+                        Support Raymond Hill (uBlock Origin)
+                    </a>
+                    <a href="https://github.com/violentmonkey/violentmonkey" target="_blank" rel="noopener noreferrer"
+                        class="support-link">
+                        Support Violentmonkey Project
+                    </a>
+                    <a href="https://www.mozilla.org/foundation/" target="_blank" rel="noopener noreferrer"
+                        class="support-link">
+                        Support Mozilla Foundation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">Made with Love by E4CRYPT3D</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
