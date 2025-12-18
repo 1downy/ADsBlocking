@@ -60,6 +60,8 @@ html {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	/* Updated to support three sections: logo, nav links, and theme toggle */
+	gap: 2rem;
 }
 
 .nav-title {
@@ -73,6 +75,45 @@ html {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+	/* Added flex-shrink to prevent title wrapping */
+	flex-shrink: 0;
+}
+
+/* Added navigation links styles */
+.nav-links {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	flex: 1;
+	justify-content: center;
+}
+
+.nav-link {
+	color: var(--text-secondary);
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 0.95rem;
+	transition: color 0.2s ease;
+	position: relative;
+}
+
+.nav-link:hover {
+	color: var(--accent);
+}
+
+.nav-link::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--accent);
+	transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+	width: 100%;
 }
 
 /* Added styles for nav icon */
@@ -93,6 +134,8 @@ html {
 	transition: transform 0.2s ease, background-color 0.2s ease; /* Updated from all */
 	color: var(--text-primary);
 	will-change: transform; /* Added */
+	/* Added flex-shrink to prevent button wrapping */
+	flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -446,6 +489,24 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
+	/* Added responsive styles for navigation */
+	.nav-container {
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.nav-links {
+		order: 3;
+		width: 100%;
+		justify-content: space-around;
+		gap: 1rem;
+		padding-top: 0.5rem;
+	}
+
+	.nav-link {
+		font-size: 0.875rem;
+	}
+
 	.hero-title {
 		font-size: 2rem;
 	}
