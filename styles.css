@@ -474,6 +474,41 @@ html {
 	transform: translateY(-2px) translateZ(0); /* Updated with translateZ(0) */
 }
 
+/* Disclaimer Section */
+.disclaimer-section {
+	background-color: var(--bg-secondary);
+	padding: 3rem 1.5rem;
+	border-top: 1px solid var(--border);
+}
+
+.disclaimer-box {
+	max-width: 900px;
+	margin: 0 auto;
+	background-color: var(--bg-card);
+	border: 2px solid var(--border);
+	border-radius: 1rem;
+	padding: 2rem;
+	text-align: center;
+}
+
+.disclaimer-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	color: var(--text-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.disclaimer-text {
+	color: var(--text-secondary);
+	font-size: 0.95rem;
+	line-height: 1.7;
+	margin: 0;
+}
+
 /* Footer */
 .footer {
 	background-color: var(--bg-card);
