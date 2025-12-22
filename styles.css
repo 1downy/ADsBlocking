@@ -572,5 +572,6 @@ html {
 
 	.support-link {
 		width: 100%;
+		display: block;
 	}
 }
