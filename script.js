@@ -1,28 +1,51 @@
 const themeToggle = document.getElementById("theme-toggle");
 const html = document.documentElement;
 
-// Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem("theme") || "light";
-html.setAttribute("data-theme", currentTheme);
+const STORAGE_KEY = "theme";
+const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-let themeTimeout;
-themeToggle.addEventListener("click", () => {
-	if (themeTimeout) return;
+// Get initial theme
+function getInitialTheme() {
+	const savedTheme = localStorage.getItem(STORAGE_KEY);
+	if (savedTheme === "light" || savedTheme === "dark") {
+		return savedTheme;
+	}
+	return systemPrefersDark.matches ? "dark" : "light";
+}
 
-	const currentTheme = html.getAttribute("data-theme");
-	const newTheme = currentTheme === "light" ? "dark" : "light";
+// Apply theme
+function applyTheme(theme) {
+	html.setAttribute("data-theme", theme);
+}
 
-	// Use RAF for smoother transition
-	requestAnimationFrame(() => {
-		html.setAttribute("data-theme", newTheme);
-		localStorage.setItem("theme", newTheme);
-	});
+// Initial load
+applyTheme(getInitialTheme());
 
-	// Prevent rapid toggling
-	themeTimeout = setTimeout(() => {
-		themeTimeout = null;
-	}, 300);
+// Listen for OS theme changes (only if no manual override)
+systemPrefersDark.addEventListener("change", (e) => {
+	if (!localStorage.getItem(STORAGE_KEY)) {
+		applyTheme(e.matches ? "dark" : "light");
+	}
 });
+
+// Manual toggle
+if (themeToggle) {
+	let themeTimeout = null;
+
+	themeToggle.addEventListener("click", () => {
+		if (themeTimeout) return;
+
+		const currentTheme = html.getAttribute("data-theme");
+		const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+		applyTheme(newTheme);
+		localStorage.setItem(STORAGE_KEY, newTheme);
+
+		themeTimeout = setTimeout(() => {
+			themeTimeout = null;
+		}, 300);
+	});
+}
 
 const body = document.body;
 
