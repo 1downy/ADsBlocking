@@ -4,27 +4,13 @@ const html = document.documentElement;
 const STORAGE_KEY = "theme";
 const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-// Get initial theme
-function getInitialTheme() {
-	const savedTheme = localStorage.getItem(STORAGE_KEY);
-	if (savedTheme === "light" || savedTheme === "dark") {
-		return savedTheme;
-	}
-	return systemPrefersDark.matches ? "dark" : "light";
-}
-
-// Apply theme
-function applyTheme(theme) {
-	html.setAttribute("data-theme", theme);
-}
-
-// Initial load
-applyTheme(getInitialTheme());
+// Initial FOUC-prevention theme is applied in index.html
+// This handles the user preference changes and manual toggle
 
 // Listen for OS theme changes (only if no manual override)
 systemPrefersDark.addEventListener("change", (e) => {
 	if (!localStorage.getItem(STORAGE_KEY)) {
-		applyTheme(e.matches ? "dark" : "light");
+		document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
 	}
 });
 
@@ -38,7 +24,7 @@ if (themeToggle) {
 		const currentTheme = html.getAttribute("data-theme");
 		const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-		applyTheme(newTheme);
+		html.setAttribute("data-theme", newTheme);
 		localStorage.setItem(STORAGE_KEY, newTheme);
 
 		themeTimeout = setTimeout(() => {
@@ -68,13 +54,21 @@ body.addEventListener("click", (e) => {
 	}
 });
 
+const backToTopButton = document.querySelector("#back-to-top");
+
 let ticking = false;
-document.addEventListener(
+window.addEventListener(
 	"scroll",
 	() => {
 		if (!ticking) {
-			requestAnimationFrame(() => {
-				// Scroll-based optimizations can be added here
+			window.requestAnimationFrame(() => {
+				// Back to top button visibility
+				if (window.pageYOffset > 300) {
+					backToTopButton?.classList.add("show");
+				} else {
+					backToTopButton?.classList.remove("show");
+				}
+
 				ticking = false;
 			});
 			ticking = true;
@@ -82,19 +76,12 @@ document.addEventListener(
 	},
 	{ passive: true }
 );
-const backToTopButton = document.querySelector("#back-to-top");
 
-window.addEventListener("scroll", () => {
-	if (window.pageYOffset > 300) {
-		backToTopButton.classList.add("show");
-	} else {
-		backToTopButton.classList.remove("show");
-	}
-});
-
-backToTopButton.addEventListener("click", () => {
-	window.scrollTo({
-		top: 0,
-		behavior: "smooth",
+if (backToTopButton) {
+	backToTopButton.addEventListener("click", () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	});
-});
+}

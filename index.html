@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>ADsBlocking Guide - Complete Setup for Ad-Free Browsing</title>
 
@@ -11,9 +11,11 @@
         content="Take back control of your browsing experience. Learn how to block ads, trackers, and bypass short-link pages using Firefox, uBlock Origin, and Violentmonkey.">
 
     <meta name="author" content="E4CRYPT3D">
+    <meta name="theme-color" content="#8b5cf6">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://adsblocking.pages.dev/">
+
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="ADsBlocking Guide - Complete Setup for Ad-Free Browsing">
@@ -35,13 +37,24 @@
 
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Inline script to prevent FOUC (Flash of Unstyled Content)
+        (function () {
+            const STORAGE_KEY = "theme";
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : (systemPrefersDark ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
     <script src="script.js" defer></script>
 </head>
 
 
 
 <body>
-    <nav class="nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="nav" role="navigation">
         <div class="nav-container">
             <a href="https://adsblocking.pages.dev/" style="text-decoration: none;">
                 <h2 class="nav-title"><span class="nav-icon">🛡️</span> ADsBlocking Guide</h2>
@@ -56,7 +69,7 @@
             </div>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2">
+                    stroke-width="2" aria-hidden="true">
                     <circle cx="12" cy="12" r="5" />
                     <line x1="12" y1="1" x2="12" y2="3" />
                     <line x1="12" y1="21" x2="12" y2="23" />
@@ -68,749 +81,763 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
                 <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2">
+                    stroke-width="2" aria-hidden="true">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Take Back Control of Your Browsing Experience</h1>
-            <p class="hero-subtitle">
-                A comprehensive guide to blocking intrusive ads, protecting your privacy, and bypassing annoying
-                short-link pages with powerful, free tools.
-            </p>
+    <main id="main-content" role="main" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Take Back Control of Your Browsing Experience</h1>
+                <p class="hero-subtitle">
+                    A comprehensive guide to blocking intrusive ads, protecting your privacy, and bypassing annoying
+                    short-link pages with powerful, free tools.
+                </p>
 
-            <a href="#support" class="support-link support-box">Support the creators</a>
-        </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section id="tools" class="section">
-        <div class="container">
-            <h2 class="section-title">Essential Tools</h2>
-            <p class="section-description">
-                This guide uses four powerful, open-source tools created by dedicated developers who believe in a better
-                web.
-            </p>
-
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <!-- Changed emoji icon to SVG icon for Firefox -->
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                            <path d="M2 12h20" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">Firefox Browser</h3>
-                    <p class="tool-description">
-                        A mainstream browser by <strong>Mozilla</strong> offering more privacy settings than Chrome.
-                        Not fully privacy-focused, but better than most major alternatives.
-                    </p>
-
-                    <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Download Firefox →
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <!-- Changed emoji icon to SVG icon for uBlock Origin -->
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            <path d="M9 12l2 2 4-4" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">uBlock Origin</h3>
-                    <p class="tool-description">
-                        The gold standard in ad blocking, created by <strong>Raymond Hill</strong>. It's efficient,
-                        powerful, and completely free with no "acceptable ads" compromises.
-                    </p>
-                    <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        Add to Firefox →
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <!-- Changed emoji icon to SVG icon for Violentmonkey -->
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">Violentmonkey</h3>
-                    <p class="tool-description">
-                        A userscript manager by <strong>Gerald & tophf</strong> that lets you customize websites with
-                        community scripts. Open-source and actively maintained for modern browsers.
-                    </p>
-                    <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        Add to Firefox →
-                    </a>
-                </div>
-
-                <!-- Added new card for link bypasser scripts -->
-                <!-- Updated card for link bypasser scripts -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg>
-                    </div>
-
-                    <h3 class="tool-title">Link Bypasser Userscript</h3>
-
-                    <p class="tool-description">
-                        A userscript by <strong>Amm0ni4</strong> that bypasses many supported short-link
-                        services. To use it correctly, visit Amm0ni4’s Codeberg page and follow the setup
-                        guide, or install the script directly using a userscript manager.
-                    </p>
-
-                    <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        View guide on Codeberg →
-                    </a>
-
-                </div>
-
+                <a href="#support" class="support-link support-box">Support the creators</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Steps Section -->
-    <section id="setup" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Setup Guide</h2>
-            <p class="section-description">Follow these steps in order to set up your complete ad-free browsing
-                experience</p>
+        <!-- Tools Section -->
+        <section id="tools" class="section">
+            <div class="container">
+                <h2 class="section-title">Essential Tools</h2>
+                <p class="section-description">
+                    This guide uses four powerful, open-source tools created by dedicated developers who believe in a
+                    better
+                    web.
+                </p>
 
-            <div class="steps">
-                <!-- Step 1 -->
-                <div id="step-1" class="step-card">
-                    <div class="step-number">01</div>
-                    <h3 class="step-title">Install Firefox Browser</h3>
-                    <p class="step-description">
-                        Start by downloading Firefox, a browser built for privacy and customization. It's fast, secure,
-                        and doesn't track your every move.
-                    </p>
-                    <ol class="step-list">
-                        <li>Visit <a href="https://www.mozilla.org/firefox/" target="_blank"
-                                rel="noopener noreferrer">mozilla.org/firefox</a></li>
-                        <li>Download the installer for your operating system</li>
-                        <li>Run the installer and follow the setup wizard</li>
-                        <li>Launch Firefox and make it your default browser (optional)</li>
-                    </ol>
-                </div>
-
-                <!-- Step 2 -->
-                <div id="step-2" class="step-card">
-                    <div class="step-number">02</div>
-                    <h3 class="step-title">Install uBlock Origin</h3>
-                    <p class="step-description">
-                        Add the most effective ad blocker available. uBlock Origin blocks ads, trackers, and malware
-                        while using minimal system resources.
-                    </p>
-                    <ol class="step-list">
-                        <li>Open Firefox and navigate to the <a
-                                href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
-                                rel="noopener noreferrer">uBlock Origin add-on page</a></li>
-                        <li>Click "Add to Firefox"</li>
-                        <li>Confirm the installation when prompted</li>
-                        <li>The uBlock Origin icon will appear in your toolbar</li>
-                        <li>Click the icon to access settings and customize your blocking preferences</li>
-                    </ol>
-                </div>
-
-                <!-- Step 3 -->
-                <div id="step-3" class="step-card">
-                    <div class="step-number">03</div>
-                    <h3 class="step-title">Install Violentmonkey</h3>
-                    <p class="step-description">
-                        Enable userscripts to customize websites and add extra functionality. This is required for the
-                        link bypasser scripts to work.
-                    </p>
-                    <ol class="step-list">
-                        <li>Visit the <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
-                                rel="noopener noreferrer">Violentmonkey add-on page</a></li>
-                        <li>Click "Add to Firefox"</li>
-                        <li>Confirm the installation</li>
-                        <li>The Violentmonkey icon will appear in your toolbar</li>
-                    </ol>
-                </div>
-
-                <!-- Step 4 for link bypasser scripts -->
-                <div id="step-4" class="step-card">
-                    <div class="step-number">04</div>
-                    <h3 class="step-title">Install Link Bypasser Userscript</h3>
-
-                    <p class="step-description">
-                        Install the link bypasser userscript by <strong>Amm0ni4</strong>.
-                        This script supports many short-link services.
-                        <strong>Important:</strong> A userscript manager like Violentmonkey is required.
-                    </p>
-
-                    <ol class="step-list">
-                        <li>Make sure you've completed Step 3 (Violentmonkey installation)</li>
-
-                        <li>
-                            Go to Amm0ni4’s Codeberg page and follow the installation instructions:<br>
-                            <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
-                                rel="noopener noreferrer">
-                                View installation guide
-                            </a>
-                        </li>
-
-
-                        <li>
-                            Or click here to install the userscript directly:<br>
-                            <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/raw/branch/main/Bypass_All_Shortlinks.user.js"
-                                target="_blank" rel="noopener noreferrer">
-                                Install Bypass All Shortlinks userscript
-                            </a>
-                        </li>
-
-                        <li>Violentmonkey will open an install prompt</li>
-                        <li>Confirm the installation</li>
-                        <li>The script will automatically bypass supported short-link sites</li>
-                    </ol>
-
-                    <div class="alert">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="8" x2="12" y2="12" />
-                            <line x1="12" y1="16" x2="12.01" y2="16" />
-                        </svg>
-                        <p>
-                            <strong>Note:</strong> Always follow the instructions on Amm0ni4’s Codeberg page.
-                            Supported sites and setup details may change.
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <!-- Changed emoji icon to SVG icon for Firefox -->
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                <path d="M2 12h20" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Firefox Browser</h3>
+                        <p class="tool-description">
+                            A mainstream browser by <strong>Mozilla</strong> offering more privacy settings than Chrome.
+                            Not fully privacy-focused, but better than most major alternatives.
                         </p>
+
+                        <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer"
+                            class="tool-link">
+                            Download Firefox →
+                        </a>
                     </div>
-                </div>
 
+                    <div class="tool-card">
+                        <!-- Changed emoji icon to SVG icon for uBlock Origin -->
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">uBlock Origin</h3>
+                        <p class="tool-description">
+                            The gold standard in ad blocking, created by <strong>Raymond Hill</strong>. It's efficient,
+                            powerful, and completely free with no "acceptable ads" compromises.
+                        </p>
+                        <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
+                            rel="noopener noreferrer" class="tool-link">
+                            Add to Firefox →
+                        </a>
+                    </div>
 
-                <!-- Updated old Step 4 to Step 5 -->
-                <div id="step-5" class="step-card">
-                    <div class="step-number">05</div>
-                    <h3 class="step-title">Configure & Enjoy</h3>
-                    <p class="step-description">
-                        Fine-tune your setup for the best experience. Adjust settings, add custom filters, and explore
-                        advanced features as you get comfortable.
-                    </p>
-                    <ul class="step-list">
-                        <li>In uBlock Origin, enable additional filter lists for extra protection</li>
-                        <li>Whitelist trusted sites to support creators you love</li>
-                        <li>Install additional userscripts from <a href="https://greasyfork.org/" target="_blank"
-                                rel="noopener noreferrer">Greasyfork</a> that match your needs</li>
-                        <li>Regularly update your extensions for the latest features and security patches</li>
-                        <li>Enjoy a cleaner, faster, and more private browsing experience!</li>
-                    </ul>
+                    <div class="tool-card">
+                        <!-- Changed emoji icon to SVG icon for Violentmonkey -->
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Violentmonkey</h3>
+                        <p class="tool-description">
+                            A userscript manager by <strong>Gerald & tophf</strong> that lets you customize websites
+                            with
+                            community scripts. Open-source and actively maintained for modern browsers.
+                        </p>
+                        <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
+                            rel="noopener noreferrer" class="tool-link">
+                            Add to Firefox →
+                        </a>
+                    </div>
+
+                    <!-- Added new card for link bypasser scripts -->
+                    <!-- Updated card for link bypasser scripts -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </div>
+
+                        <h3 class="tool-title">Link Bypasser Userscript</h3>
+
+                        <p class="tool-description">
+                            A userscript by <strong>Amm0ni4</strong> that bypasses many supported short-link
+                            services. To use it correctly, visit Amm0ni4’s Codeberg page and follow the setup
+                            guide, or install the script directly using a userscript manager.
+                        </p>
+
+                        <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
+                            rel="noopener noreferrer" class="tool-link">
+                            View guide on Codeberg →
+                        </a>
+
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Optional Add-ons Section -->
-    <section id="optional" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Optional Add-ons</h2>
-            <p class="section-description">
-                Take your browsing experience even further with these recommended extensions
-            </p>
+        <!-- Steps Section -->
+        <section id="setup" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Setup Guide</h2>
+                <p class="section-description">Follow these steps in order to set up your complete ad-free browsing
+                    experience</p>
 
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
+                <div class="steps">
+                    <!-- Step 1 -->
+                    <div id="step-1" class="step-card">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">Install Firefox Browser</h3>
+                        <p class="step-description">
+                            Start by downloading Firefox, a browser built for privacy and customization. It's fast,
+                            secure,
+                            and doesn't track your every move.
+                        </p>
+                        <ol class="step-list">
+                            <li>Visit <a href="https://www.mozilla.org/firefox/" target="_blank"
+                                    rel="noopener noreferrer">mozilla.org/firefox</a></li>
+                            <li>Download the installer for your operating system</li>
+                            <li>Run the installer and follow the setup wizard</li>
+                            <li>Launch Firefox and make it your default browser (optional)</li>
+                        </ol>
                     </div>
-                    <h3 class="tool-title">Privacy Badger</h3>
-                    <p class="tool-description">
-                        Automatically learns to block invisible trackers by <strong>Electronic Frontier Foundation
-                            (EFF)</strong>. A powerful companion to uBlock Origin that focuses specifically on
-                        preventing third-party tracking.
-                    </p>
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        Add to Firefox →
-                    </a>
-                </div>
 
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7" />
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                        </svg>
+                    <!-- Step 2 -->
+                    <div id="step-2" class="step-card">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">Install uBlock Origin</h3>
+                        <p class="step-description">
+                            Add the most effective ad blocker available. uBlock Origin blocks ads, trackers, and malware
+                            while using minimal system resources.
+                        </p>
+                        <ol class="step-list">
+                            <li>Open Firefox and navigate to the <a
+                                    href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
+                                    rel="noopener noreferrer">uBlock Origin add-on page</a></li>
+                            <li>Click "Add to Firefox"</li>
+                            <li>Confirm the installation when prompted</li>
+                            <li>The uBlock Origin icon will appear in your toolbar</li>
+                            <li>Click the icon to access settings and customize your blocking preferences</li>
+                        </ol>
                     </div>
-                    <h3 class="tool-title">Return YouTube Dislikes</h3>
-                    <p class="tool-description">
-                        Restores the YouTube dislike count by <strong>Dmitry Selivanov & Anarios</strong>. See accurate
-                        like/dislike ratios to help judge video quality at a glance.
-                    </p>
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        Add to Firefox →
-                    </a>
-                </div>
 
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
+                    <!-- Step 3 -->
+                    <div id="step-3" class="step-card">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">Install Violentmonkey</h3>
+                        <p class="step-description">
+                            Enable userscripts to customize websites and add extra functionality. This is required for
+                            the
+                            link bypasser scripts to work.
+                        </p>
+                        <ol class="step-list">
+                            <li>Visit the <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/"
+                                    target="_blank" rel="noopener noreferrer">Violentmonkey add-on page</a></li>
+                            <li>Click "Add to Firefox"</li>
+                            <li>Confirm the installation</li>
+                            <li>The Violentmonkey icon will appear in your toolbar</li>
+                        </ol>
                     </div>
-                    <h3 class="tool-title">SponsorBlock</h3>
-                    <p class="tool-description">
-                        Skip sponsored segments in YouTube videos automatically by <strong>Ajay Ramachandran</strong>.
-                        Crowdsourced timestamps help you save time by skipping in-video ads, intros, and outros.
-                    </p>
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        Download qBittorrent →
-                    </a>
+
+                    <!-- Step 4 for link bypasser scripts -->
+                    <div id="step-4" class="step-card">
+                        <div class="step-number">04</div>
+                        <h3 class="step-title">Install Link Bypasser Userscript</h3>
+
+                        <p class="step-description">
+                            Install the link bypasser userscript by <strong>Amm0ni4</strong>.
+                            This script supports many short-link services.
+                            <strong>Important:</strong> A userscript manager like Violentmonkey is required.
+                        </p>
+
+                        <ol class="step-list">
+                            <li>Make sure you've completed Step 3 (Violentmonkey installation)</li>
+
+                            <li>
+                                Go to Amm0ni4’s Codeberg page and follow the installation instructions:<br>
+                                <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    View installation guide
+                                </a>
+                            </li>
+
+
+                            <li>
+                                Or click here to install the userscript directly:<br>
+                                <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/raw/branch/main/Bypass_All_Shortlinks.user.js"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Install Bypass All Shortlinks userscript
+                                </a>
+                            </li>
+
+                            <li>Violentmonkey will open an install prompt</li>
+                            <li>Confirm the installation</li>
+                            <li>The script will automatically bypass supported short-link sites</li>
+                        </ol>
+
+                        <div class="alert">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="12" />
+                                <line x1="12" y1="16" x2="12.01" y2="16" />
+                            </svg>
+                            <p>
+                                <strong>Note:</strong> Always follow the instructions on Amm0ni4’s Codeberg page.
+                                Supported sites and setup details may change.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- Updated old Step 4 to Step 5 -->
+                    <div id="step-5" class="step-card">
+                        <div class="step-number">05</div>
+                        <h3 class="step-title">Configure & Enjoy</h3>
+                        <p class="step-description">
+                            Fine-tune your setup for the best experience. Adjust settings, add custom filters, and
+                            explore
+                            advanced features as you get comfortable.
+                        </p>
+                        <ul class="step-list">
+                            <li>In uBlock Origin, enable additional filter lists for extra protection</li>
+                            <li>Whitelist trusted sites to support creators you love</li>
+                            <li>Install additional userscripts from <a href="https://greasyfork.org/" target="_blank"
+                                    rel="noopener noreferrer">Greasyfork</a> that match your needs</li>
+                            <li>Regularly update your extensions for the latest features and security patches</li>
+                            <li>Enjoy a cleaner, faster, and more private browsing experience!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Essential Downloads Section -->
-    <section id="downloads" class="section">
-        <div class="container">
-            <h2 class="section-title">Essential Downloads</h2>
-            <p class="section-description">
-                Powerful utilities and software that every user should have in their toolkit
-            </p>
-
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-                            <rect x="9" y="9" width="6" height="6" />
-                            <line x1="9" y1="1" x2="9" y2="4" />
-                            <line x1="15" y1="1" x2="15" y2="4" />
-                            <line x1="9" y1="20" x2="9" y2="23" />
-                            <line x1="15" y1="20" x2="15" y2="23" />
-                            <line x1="20" y1="9" x2="23" y2="9" />
-                            <line x1="20" y1="14" x2="23" y2="14" />
-                            <line x1="1" y1="9" x2="4" y2="9" />
-                            <line x1="1" y1="14" x2="4" y2="14" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">Microsoft Activation Scripts</h3>
-                    <p class="tool-description">
-                        Open-source Windows and Office activation scripts by <strong>massgravel</strong>. A collection
-                        of powerful activation tools for Windows and Microsoft Office products.
-                    </p>
-                    <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                        Visit MAS Website →
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="6" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">OS Downloads</h3>
-                    <p class="tool-description">
-                        Comprehensive collection of operating system downloads. Get official ISO files for Windows,
-                        Linux distributions, and other operating systems in one convenient location.
-                    </p>
-                    <a href="https://os.click/en" target="_blank" rel="noopener noreferrer" class="tool-link">
-                        Browse OS Downloads →
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 4 23 10 17 10" />
-                            <polyline points="1 20 1 14 7 14" />
-                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">IDM Trial Reset</h3>
-                    <p class="tool-description">
-                        Internet Download Manager trial reset tool by <strong>J2TEAM</strong>. Easily reset your IDM
-                        trial period with this simple and effective utility.
-                    </p>
-                    <a href="https://github.com/J2TEAM/idm-trial-reset" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Visit GitHub Repository →
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">qBittorrent</h3>
-                    <p class="tool-description">
-                        Free and open-source BitTorrent client by the <strong>qBittorrent community</strong>. A
-                        lightweight alternative to other torrent clients with no ads or bundled software.
-                    </p>
-                    <a href="https://www.qbittorrent.org/download" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Download qBittorrent →
-                    </a>
-                </div>
-
-
-
-                <!-- Added Chris Titus Tech WinUtil card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">Chris Titus Tech WinUtil</h3>
-                    <p class="tool-description">
-                        Install programs, tweaks, fixes, and updates by <strong>Chris Titus Tech</strong>. A powerful
-                        all-in-one utility for optimizing and customizing Windows.
-                    </p>
-                    <a href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Visit GitHub Repository →
-                    </a>
-                </div>
-
-                <!-- Added ReVanced card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7" />
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">ReVanced</h3>
-                    <p class="tool-description">
-                        Continuing the legacy of Vanced by the <strong>ReVanced Team</strong>. Patch your favorite
-                        Android apps to unlock features and remove ads.
-                    </p>
-                    <a href="https://revanced.app/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                        Visit ReVanced Website →
-                    </a>
-                </div>
-
-                <!-- Added ReVanced Non-Root card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="17 8 12 3 7 8" />
-                            <line x1="12" y1="3" x2="12" y2="15" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">ReVanced Non-Root</h3>
-                    <p class="tool-description">
-                        ReVanced and ReVanced Extended builds for non-rooted devices by <strong>FiorenMas</strong>.
-                        Pre-built APKs ready to install without root access.
-                    </p>
-                    <a href="https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root" target="_blank"
-                        rel="noopener noreferrer" class="tool-link">
-                        Visit GitHub Repository →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Free Content Collection Section -->
-    <section id="fcc" class="section">
-        <div class="container">
-            <h2 class="section-title">Free Content Collection</h2>
-            <p class="section-description">
-                A collection of free content and resources
-            </p>
-
-            <div class="tools-grid">
-
-                <!-- Added FMHY card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">FMHY</h3>
-                    <p class="tool-description">
-                        The largest collection of free stuff on the internet. A comprehensive wiki with thousands of
-                        links to free media, tools, games, and educational resources.
-                    </p>
-                    <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                        Visit FMHY →
-                    </a>
-                </div>
-                <!-- Added free-for.dev card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
-                        </svg>
-                    </div>
-                    <h3 class="tool-title">Free for Developers</h3>
-                    <p class="tool-description">
-                        A community-maintained list of developer services offering long-term free tiers, including SaaS,
-                        PaaS,
-                        IaaS, and infrastructure tools for DevOps and system administrators.
-                    </p>
-                    <a href="https://free-for.dev/#/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                        Visit free-for.dev →
-                    </a>
-                </div>
-                <!-- Public APIs card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16v16H4z" />
-                            <path d="M4 9h16" />
-                            <path d="M9 9v11" />
-                        </svg>
-                    </div>
-
-                    <h3 class="tool-title">Public APIs</h3>
-
-                    <p class="tool-description">
-                        A community-curated collection of free and public APIs across hundreds of categories such as
-                        development, finance, weather, games, machine learning, and more.
-                    </p>
-
-                    <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer"
-                        class="tool-link">
-                        Try Public APIs for free →
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Support Section -->
-    <section id="support" class="section">
-        <div class="container">
-            <div class="support-box">
-                <h2 class="support-title">Support the Creators</h2>
-                <p class="support-description">
-                    These tools are created and maintained by passionate developers who offer them for free. Consider
-                    supporting their work:
-                </p>
-                <div class="support-links">
-                    <a href="https://github.com/gorhill/uBlock#readme" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Raymond Hill (uBlock Origin)
-                    </a>
-                    <a href="https://github.com/violentmonkey/violentmonkey" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Violentmonkey Team
-                    </a>
-                    <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
-                        rel="noopener noreferrer" class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Amm0ni4 (Link Bypasser Scripts)
-                    </a>
-                    <a href="https://www.mozilla.org/foundation/" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Mozilla Foundation
-                    </a>
-                    <a href="https://www.eff.org/pages/other-ways-give-and-donor-support" target="_blank"
-                        rel="noopener noreferrer" class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support EFF (Privacy Badger)
-                    </a>
-                    <a href="https://returnyoutubedislike.com/donate" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Return YouTube Dislikes
-                    </a>
-                    <a href="https://sponsor.ajay.app/" target="_blank" rel="noopener noreferrer" class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Ajay Ramachandran (SponsorBlock)
-                    </a>
-                    <!-- Added support links for massgravel, J2TEAM, qBittorrent, Chris Titus Tech, and ReVanced Team -->
-                    <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer" class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support massgravel (MAS)
-                    </a>
-                    <a href="https://github.com/J2TEAM/idm-trial-reset" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support J2TEAM (IDM Trial Reset)
-                    </a>
-                    <a href="https://www.qbittorrent.org/donate" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support qBittorrent Community
-                    </a>
-                    <a href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support Chris Titus Tech (WinUtil)
-                    </a>
-                    <a href="https://revanced.app/" target="_blank" rel="noopener noreferrer" class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support ReVanced Team
-                    </a>
-                    <a href="https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root" target="_blank"
-                        rel="noopener noreferrer" class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Support FiorenMas (ReVanced Non-Root)
-                    </a>
-                    <a href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        free-for.dev
-                    </a>
-                    <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer"
-                        class="support-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                        Public APIs
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Disclaimer Section -->
-    <section class="disclaimer-section">
-        <div class="container">
-            <div class="disclaimer-box">
-                <h3 class="disclaimer-title">⚠️ Disclaimer</h3>
-                <p class="disclaimer-text">
-                    ADsBlocking does not host or distribute any software. All links lead to official third-party
-                    repositories (like GitHub) or external websites.
+        <!-- Optional Add-ons Section -->
+        <section id="optional" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Optional Add-ons</h2>
+                <p class="section-description">
+                    Take your browsing experience even further with these recommended extensions
                 </p>
 
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Privacy Badger</h3>
+                        <p class="tool-description">
+                            Automatically learns to block invisible trackers by <strong>Electronic Frontier Foundation
+                                (EFF)</strong>. A powerful companion to uBlock Origin that focuses specifically on
+                            preventing third-party tracking.
+                        </p>
+                        <a href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/" target="_blank"
+                            rel="noopener noreferrer" class="tool-link">
+                            Add to Firefox →
+                        </a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Return YouTube Dislikes</h3>
+                        <p class="tool-description">
+                            Restores the YouTube dislike count by <strong>Dmitry Selivanov & Anarios</strong>. See
+                            accurate
+                            like/dislike ratios to help judge video quality at a glance.
+                        </p>
+                        <a href="https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/"
+                            target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Add to Firefox →
+                        </a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">SponsorBlock</h3>
+                        <p class="tool-description">
+                            Skip sponsored segments in YouTube videos automatically by <strong>Ajay
+                                Ramachandran</strong>.
+                            Crowdsourced timestamps help you save time by skipping in-video ads, intros, and outros.
+                        </p>
+                        <a href="https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/" target="_blank"
+                            rel="noopener noreferrer" class="tool-link">
+                            Download SponsorBlock →
+                        </a>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Essential Downloads Section -->
+        <section id="downloads" class="section">
+            <div class="container">
+                <h2 class="section-title">Essential Downloads</h2>
+                <p class="section-description">
+                    Powerful utilities and software that every user should have in their toolkit
+                </p>
+
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                                <rect x="9" y="9" width="6" height="6" />
+                                <line x1="9" y1="1" x2="9" y2="4" />
+                                <line x1="15" y1="1" x2="15" y2="4" />
+                                <line x1="9" y1="20" x2="9" y2="23" />
+                                <line x1="15" y1="20" x2="15" y2="23" />
+                                <line x1="20" y1="9" x2="23" y2="9" />
+                                <line x1="20" y1="14" x2="23" y2="14" />
+                                <line x1="1" y1="9" x2="4" y2="9" />
+                                <line x1="1" y1="14" x2="4" y2="14" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Microsoft Activation Scripts</h3>
+                        <p class="tool-description">
+                            Open-source Windows and Office activation scripts by <strong>massgravel</strong>. A
+                            collection
+                            of powerful activation tools for Windows and Microsoft Office products.
+                        </p>
+                        <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Visit MAS Website →
+                        </a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">OS Downloads</h3>
+                        <p class="tool-description">
+                            Comprehensive collection of operating system downloads. Get official ISO files for Windows,
+                            Linux distributions, and other operating systems in one convenient location.
+                        </p>
+                        <a href="https://os.click/en" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Browse OS Downloads →
+                        </a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10" />
+                                <polyline points="1 20 1 14 7 14" />
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">IDM Trial Reset</h3>
+                        <p class="tool-description">
+                            Internet Download Manager trial reset tool by <strong>J2TEAM</strong>. Easily reset your IDM
+                            trial period with this simple and effective utility.
+                        </p>
+                        <a href="https://github.com/J2TEAM/idm-trial-reset" target="_blank" rel="noopener noreferrer"
+                            class="tool-link">
+                            Visit GitHub Repository →
+                        </a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">qBittorrent</h3>
+                        <p class="tool-description">
+                            Free and open-source BitTorrent client by the <strong>qBittorrent community</strong>. A
+                            lightweight alternative to other torrent clients with no ads or bundled software.
+                        </p>
+                        <a href="https://www.qbittorrent.org/download" target="_blank" rel="noopener noreferrer"
+                            class="tool-link">
+                            Download qBittorrent →
+                        </a>
+                    </div>
+
+
+
+                    <!-- Added Chris Titus Tech WinUtil card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Chris Titus Tech WinUtil</h3>
+                        <p class="tool-description">
+                            Install programs, tweaks, fixes, and updates by <strong>Chris Titus Tech</strong>. A
+                            powerful
+                            all-in-one utility for optimizing and customizing Windows.
+                        </p>
+                        <a href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener noreferrer"
+                            class="tool-link">
+                            Visit GitHub Repository →
+                        </a>
+                    </div>
+
+                    <!-- Added ReVanced card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">ReVanced</h3>
+                        <p class="tool-description">
+                            Continuing the legacy of Vanced by the <strong>ReVanced Team</strong>. Patch your favorite
+                            Android apps to unlock features and remove ads.
+                        </p>
+                        <a href="https://revanced.app/" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Visit ReVanced Website →
+                        </a>
+                    </div>
+
+                    <!-- Added ReVanced Non-Root card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">ReVanced Non-Root</h3>
+                        <p class="tool-description">
+                            ReVanced and ReVanced Extended builds for non-rooted devices by <strong>FiorenMas</strong>.
+                            Pre-built APKs ready to install without root access.
+                        </p>
+                        <a href="https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root" target="_blank"
+                            rel="noopener noreferrer" class="tool-link">
+                            Visit GitHub Repository →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Content Collection Section -->
+        <section id="fcc" class="section">
+            <div class="container">
+                <h2 class="section-title">Free Content Collection</h2>
+                <p class="section-description">
+                    A collection of free content and resources
+                </p>
+
+                <div class="tools-grid">
+
+                    <!-- Added FMHY card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">FMHY</h3>
+                        <p class="tool-description">
+                            The largest collection of free stuff on the internet. A comprehensive wiki with thousands of
+                            links to free media, tools, games, and educational resources.
+                        </p>
+                        <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Visit FMHY →
+                        </a>
+                    </div>
+                    <!-- Added free-for.dev card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Free for Developers</h3>
+                        <p class="tool-description">
+                            A community-maintained list of developer services offering long-term free tiers, including
+                            SaaS,
+                            PaaS,
+                            IaaS, and infrastructure tools for DevOps and system administrators.
+                        </p>
+                        <a href="https://free-for.dev/#/" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            Visit free-for.dev →
+                        </a>
+                    </div>
+                    <!-- Public APIs card -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16v16H4z" />
+                                <path d="M4 9h16" />
+                                <path d="M9 9v11" />
+                            </svg>
+                        </div>
+
+                        <h3 class="tool-title">Public APIs</h3>
+
+                        <p class="tool-description">
+                            A community-curated collection of free and public APIs across hundreds of categories such as
+                            development, finance, weather, games, machine learning, and more.
+                        </p>
+
+                        <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer"
+                            class="tool-link">
+                            Try Public APIs for free →
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="section">
+            <div class="container">
+                <div class="support-box">
+                    <h2 class="support-title">Support the Creators</h2>
+                    <p class="support-description">
+                        These tools are created and maintained by passionate developers who offer them for free.
+                        Consider
+                        supporting their work:
+                    </p>
+                    <div class="support-links">
+                        <a href="https://github.com/gorhill/uBlock#readme" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Raymond Hill (uBlock Origin)
+                        </a>
+                        <a href="https://github.com/violentmonkey/violentmonkey" target="_blank"
+                            rel="noopener noreferrer" class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Violentmonkey Team
+                        </a>
+                        <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
+                            rel="noopener noreferrer" class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Amm0ni4 (Link Bypasser Scripts)
+                        </a>
+                        <a href="https://www.mozilla.org/foundation/" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Mozilla Foundation
+                        </a>
+                        <a href="https://www.eff.org/pages/other-ways-give-and-donor-support" target="_blank"
+                            rel="noopener noreferrer" class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support EFF (Privacy Badger)
+                        </a>
+                        <a href="https://returnyoutubedislike.com/donate" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Return YouTube Dislikes
+                        </a>
+                        <a href="https://sponsor.ajay.app/" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Ajay Ramachandran (SponsorBlock)
+                        </a>
+                        <!-- Added support links for massgravel, J2TEAM, qBittorrent, Chris Titus Tech, and ReVanced Team -->
+                        <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer" class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support massgravel (MAS)
+                        </a>
+                        <a href="https://github.com/J2TEAM/idm-trial-reset" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support J2TEAM (IDM Trial Reset)
+                        </a>
+                        <a href="https://www.qbittorrent.org/donate" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support qBittorrent Community
+                        </a>
+                        <a href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support Chris Titus Tech (WinUtil)
+                        </a>
+                        <a href="https://revanced.app/" target="_blank" rel="noopener noreferrer" class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support ReVanced Team
+                        </a>
+                        <a href="https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root" target="_blank"
+                            rel="noopener noreferrer" class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support FiorenMas (ReVanced Non-Root)
+                        </a>
+                        <a href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            free-for.dev
+                        </a>
+                        <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer"
+                            class="support-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Public APIs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-container" role="contentinfo">
+        <!-- Disclaimer Section -->
+        <section class="disclaimer-section">
+            <div class="container">
+                <div class="disclaimer-box">
+                    <h3 class="disclaimer-title">⚠️ Disclaimer</h3>
+                    <p class="disclaimer-text">
+                        ADsBlocking does not host or distribute any software. All links lead to official third-party
+                        repositories (like GitHub) or external websites.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <div class="footer">
+            <p class="footer-text">
+                Made with <span aria-label="love">♥</span> by
+                <a href="https://github.com/E4crypt3d" target="_blank" rel="noopener noreferrer">
+                    E4CRYPT3D
+                </a>
+            </p>
+            <p class="footer-text">© 2025 ADsBlocking Guide. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-            stroke-linecap="round" stroke-linejoin="round">
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
-</body>
-
-<!-- Footer -->
-<footer class="footer">
-    <p class="footer-text">
-        Made with <span aria-label="love">♥</span> by
-        <a href="https://github.com/E4crypt3d" target="_blank" rel="noopener noreferrer">
-            E4CRYPT3D
-        </a>
-    </p>
-</footer>
-
 </body>
 
 </html>
