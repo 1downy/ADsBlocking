@@ -9,7 +9,7 @@
 	--bg-secondary: #f8f9fa;
 	--bg-card: #ffffff;
 	--text-primary: #1a1a1a;
-	--text-secondary: #6b7280;
+	--text-secondary: #4b5563;
 	--border: #e5e7eb;
 	--accent: #8b5cf6;
 	--accent-hover: #7c3aed;
@@ -21,7 +21,7 @@
 	--bg-secondary: #111111;
 	--bg-card: #1a1a1a;
 	--text-primary: #ffffff;
-	--text-secondary: #9ca3af;
+	--text-secondary: #d1d5db;
 	--border: #2a2a2a;
 	--accent: #a78bfa;
 	--accent-hover: #8b5cf6;
@@ -34,7 +34,8 @@ body {
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
 	line-height: 1.6;
-	transition: opacity 0.3s ease; /* Updated from background-color, color */
+	transition: opacity 0.3s ease;
+	/* Updated from background-color, color */
 }
 
 html {
@@ -67,8 +68,10 @@ html {
 	background-color: var(--bg-card);
 	border-bottom: 1px solid var(--border);
 	backdrop-filter: blur(10px);
-	will-change: transform; /* Added */
-	contain: layout style paint; /* Added */
+	will-change: transform;
+	/* Added */
+	contain: layout style paint;
+	/* Added */
 }
 
 .nav-container {
@@ -149,9 +152,11 @@ html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: transform 0.2s ease, background-color 0.2s ease; /* Updated from all */
+	transition: transform 0.2s ease, background-color 0.2s ease;
+	/* Updated from all */
 	color: var(--text-primary);
-	will-change: transform; /* Added */
+	will-change: transform;
+	/* Added */
 	/* Added flex-shrink to prevent button wrapping */
 	flex-shrink: 0;
 }
@@ -181,11 +186,9 @@ html {
 .hero {
 	padding: 6rem 1.5rem 4rem;
 	text-align: center;
-	background: linear-gradient(
-		180deg,
-		var(--bg-primary) 0%,
-		var(--bg-secondary) 100%
-	);
+	background: linear-gradient(180deg,
+			var(--bg-primary) 0%,
+			var(--bg-secondary) 100%);
 }
 
 .hero-content {
@@ -221,9 +224,11 @@ html {
 	font-size: 1rem;
 	font-weight: 500;
 	text-decoration: none;
-	transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease; /* Updated from all */
+	transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+	/* Updated from all */
 	display: inline-block;
-	will-change: transform; /* Added */
+	will-change: transform;
+	/* Added */
 }
 
 .btn-primary {
@@ -294,13 +299,17 @@ html {
 	border: 1px solid var(--border);
 	border-radius: 1rem;
 	padding: 2rem;
-	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Updated from all */
-	will-change: transform; /* Added */
-	contain: layout style paint; /* Added */
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	/* Updated from all */
+	will-change: transform;
+	/* Added */
+	contain: layout style paint;
+	/* Added */
 }
 
 .tool-card:hover {
-	transform: translateY(-5px) translateZ(0); /* Updated with translateZ(0) */
+	transform: translateY(-5px) translateZ(0);
+	/* Updated with translateZ(0) */
 	box-shadow: 0 20px 40px var(--shadow);
 	border-color: var(--accent);
 }
@@ -339,7 +348,8 @@ html {
 	color: var(--accent);
 	text-decoration: none;
 	font-weight: 500;
-	transition: color 0.2s ease; /* Updated from all */
+	transition: color 0.2s ease;
+	/* Updated from all */
 }
 
 .tool-link:hover {
@@ -361,13 +371,17 @@ html {
 	border-radius: 1rem;
 	padding: 2.5rem;
 	position: relative;
-	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Updated from all */
-	will-change: transform; /* Added */
-	contain: layout style paint; /* Added */
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	/* Updated from all */
+	will-change: transform;
+	/* Added */
+	contain: layout style paint;
+	/* Added */
 }
 
 .step-card:hover {
-	transform: translateZ(0); /* Added */
+	transform: translateZ(0);
+	/* Added */
 	box-shadow: 0 10px 30px var(--shadow);
 	border-color: var(--accent);
 }
@@ -411,7 +425,8 @@ html {
 .step-list a {
 	color: var(--accent);
 	text-decoration: none;
-	transition: color 0.2s ease; /* Updated from all */
+	transition: color 0.2s ease;
+	/* Updated from all */
 }
 
 .step-list a:hover {
@@ -478,9 +493,11 @@ html {
 	border-radius: 0.5rem;
 	text-decoration: none;
 	font-weight: 500;
-	transition: transform 0.2s ease, background-color 0.2s ease; /* Updated from all */
+	transition: transform 0.2s ease, background-color 0.2s ease;
+	/* Updated from all */
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	will-change: transform; /* Added */
+	will-change: transform;
+	/* Added */
 	/* Added flexbox to align heart icon with text */
 	display: inline-flex;
 	align-items: center;
@@ -489,7 +506,8 @@ html {
 
 .support-link:hover {
 	background-color: rgba(255, 255, 255, 0.3);
-	transform: translateY(-2px) translateZ(0); /* Updated with translateZ(0) */
+	transform: translateY(-2px) translateZ(0);
+	/* Updated with translateZ(0) */
 }
 
 /* Disclaimer Section */
@@ -542,6 +560,7 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
+
 	/* Added responsive styles for navigation */
 	.nav-container {
 		flex-wrap: wrap;
@@ -593,14 +612,14 @@ html {
 		display: block;
 	}
 }
+
 .back-to-top {
 	position: fixed;
 	bottom: 30px;
 	right: 30px;
-	background-color: var(
-		--primary-color,
-		#3b82f6
-	); /* Uses your primary color or blue */
+	background-color: var(--primary-color,
+			#3b82f6);
+	/* Uses your primary color or blue */
 	color: white;
 	width: 45px;
 	height: 45px;
