@@ -4,17 +4,13 @@ const html = document.documentElement;
 const STORAGE_KEY = "theme";
 const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-// Initial FOUC-prevention theme is applied in index.html
-// This handles the user preference changes and manual toggle
-
-// Listen for OS theme changes (only if no manual override)
+// Let's keep the theme consistent with the user's OS unless they tell us otherwise
 systemPrefersDark.addEventListener("change", (e) => {
 	if (!localStorage.getItem(STORAGE_KEY)) {
 		document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
 	}
 });
 
-// Manual toggle
 if (themeToggle) {
 	let themeTimeout = null;
 
@@ -35,7 +31,6 @@ if (themeToggle) {
 
 const body = document.body;
 
-// Smooth scroll for anchor links with RAF optimization
 body.addEventListener("click", (e) => {
 	const anchor = e.target.closest('a[href^="#"]');
 	if (!anchor) return;
@@ -62,7 +57,6 @@ window.addEventListener(
 	() => {
 		if (!ticking) {
 			window.requestAnimationFrame(() => {
-				// Back to top button visibility
 				if (window.pageYOffset > 300) {
 					backToTopButton?.classList.add("show");
 				} else {

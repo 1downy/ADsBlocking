@@ -35,7 +35,6 @@ body {
 	color: var(--text-primary);
 	line-height: 1.6;
 	transition: opacity 0.3s ease;
-	/* Updated from background-color, color */
 }
 
 html {
@@ -69,9 +68,7 @@ html {
 	border-bottom: 1px solid var(--border);
 	backdrop-filter: blur(10px);
 	will-change: transform;
-	/* Added */
 	contain: layout style paint;
-	/* Added */
 }
 
 .nav-container {
@@ -81,7 +78,6 @@ html {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* Updated to support three sections: logo, nav links, and theme toggle */
 	gap: 2rem;
 }
 
@@ -92,11 +88,9 @@ html {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	/* Added flexbox to align icon with text */
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	/* Added flex-shrink to prevent title wrapping */
 	flex-shrink: 0;
 }
 
@@ -153,11 +147,8 @@ html {
 	align-items: center;
 	justify-content: center;
 	transition: transform 0.2s ease, background-color 0.2s ease;
-	/* Updated from all */
 	color: var(--text-primary);
 	will-change: transform;
-	/* Added */
-	/* Added flex-shrink to prevent button wrapping */
 	flex-shrink: 0;
 }
 
@@ -225,10 +216,8 @@ html {
 	font-weight: 500;
 	text-decoration: none;
 	transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-	/* Updated from all */
 	display: inline-block;
 	will-change: transform;
-	/* Added */
 }
 
 .btn-primary {
@@ -300,11 +289,8 @@ html {
 	border-radius: 1rem;
 	padding: 2rem;
 	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-	/* Updated from all */
 	will-change: transform;
-	/* Added */
 	contain: layout style paint;
-	/* Added */
 }
 
 .tool-card:hover {

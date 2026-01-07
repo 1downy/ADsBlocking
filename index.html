@@ -38,7 +38,6 @@
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Inline script to prevent FOUC (Flash of Unstyled Content)
         (function () {
             const STORAGE_KEY = "theme";
             const savedTheme = localStorage.getItem(STORAGE_KEY);
@@ -89,13 +88,12 @@
     </nav>
 
     <main id="main-content" role="main" tabindex="-1">
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Take Back Control of Your Browsing Experience</h1>
+                <h1 class="hero-title">Browse Like a Pro: Ad-Free & Privacy-First</h1>
                 <p class="hero-subtitle">
-                    A comprehensive guide to blocking intrusive ads, protecting your privacy, and bypassing annoying
-                    short-link pages with powerful, free tools.
+                    Tired of intrusive ads and tracking? This is your ultimate guide to reclaiming the web
+                    using powerful, free, and open-source tools. No fluff, just setup.
                 </p>
 
                 <a href="#support" class="support-link support-box">Support the creators</a>
@@ -114,7 +112,6 @@
 
                 <div class="tools-grid">
                     <div class="tool-card" id="firefox">
-                        <!-- Changed emoji icon to SVG icon for Firefox -->
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -126,8 +123,8 @@
                         </div>
                         <h3 class="tool-title">Firefox Browser</h3>
                         <p class="tool-description">
-                            A mainstream browser by <strong>Mozilla</strong> offering more privacy settings than Chrome.
-                            Not fully privacy-focused, but better than most major alternatives.
+                            The last stand for privacy. Unlike Chrome, Firefox actually gives you the power to block
+                            trackers without breaking the web. It's the engine that we need.
                         </p>
 
                         <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer"
@@ -137,7 +134,6 @@
                     </div>
 
                     <div class="tool-card" id="ublock-origin">
-                        <!-- Changed emoji icon to SVG icon for uBlock Origin -->
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -147,8 +143,8 @@
                         </div>
                         <h3 class="tool-title">uBlock Origin</h3>
                         <p class="tool-description">
-                            The gold standard in ad blocking, created by <strong>Raymond Hill</strong>. It's efficient,
-                            powerful, and completely free with no "acceptable ads" compromises.
+                            Don't settle for "acceptable" ads. This is the gold standard of content blocking—efficient,
+                            powerful, and completely free of corporate compromises.
                         </p>
                         <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -157,7 +153,6 @@
                     </div>
 
                     <div class="tool-card" id="violentmonkey">
-                        <!-- Changed emoji icon to SVG icon for Violentmonkey -->
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -167,9 +162,8 @@
                         </div>
                         <h3 class="tool-title">Violentmonkey</h3>
                         <p class="tool-description">
-                            A userscript manager by <strong>Gerald & tophf</strong> that lets you customize websites
-                            with
-                            community scripts. Open-source and actively maintained for modern browsers.
+                            Your personal web customizer. This manager runs scripts that fix annoying site
+                            behaviors and automate the tedious parts of the internet.
                         </p>
                         <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -188,20 +182,15 @@
                                 <line x1="10" y1="14" x2="21" y2="3" />
                             </svg>
                         </div>
-
-                        <h3 class="tool-title">Link Bypasser Userscript</h3>
-
+                        <h3 class="tool-title">Bypass Shortlinks</h3>
                         <p class="tool-description">
-                            A userscript by <strong>Amm0ni4</strong> that bypasses many supported short-link
-                            services. To use it correctly, visit Amm0ni4’s Codeberg page and follow the setup
-                            guide, or install the script directly using a userscript manager.
+                            Stop wasting time on "Wait 10 seconds" pages. This script cuts through the noise and
+                            takes you straight to your destination instantly.
                         </p>
-
                         <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
-                            View guide on Codeberg →
+                            View implementation guide →
                         </a>
-
                     </div>
 
                 </div>
@@ -211,100 +200,74 @@
         <!-- Steps Section -->
         <section id="setup" class="section section-alt">
             <div class="container">
-                <h2 class="section-title">Setup Guide</h2>
-                <p class="section-description">Follow these steps in order to set up your complete ad-free browsing
-                    experience</p>
+                <h2 class="section-title">Step-by-Step Setup</h2>
+                <p class="section-description">Follow these steps in order. Fire it up and let's get you protected.</p>
 
                 <div class="steps">
                     <!-- Step 1 -->
                     <div id="step-1" class="step-card">
                         <div class="step-number">01</div>
-                        <h3 class="step-title">Install Firefox Browser</h3>
+                        <h3 class="step-title">Get Firefox</h3>
                         <p class="step-description">
-                            Start by downloading Firefox, a browser built for privacy and customization. It's fast,
-                            secure,
-                            and doesn't track your every move.
+                            Start with a browser that actually respects you. Firefox is fast, secure.
                         </p>
                         <ol class="step-list">
-                            <li>Visit <a href="https://www.mozilla.org/firefox/" target="_blank"
+                            <li>Grab the installer from <a href="https://www.mozilla.org/firefox/" target="_blank"
                                     rel="noopener noreferrer">mozilla.org/firefox</a></li>
-                            <li>Download the installer for your operating system</li>
-                            <li>Run the installer and follow the setup wizard</li>
-                            <li>Launch Firefox and make it your default browser (optional)</li>
+                            <li>Run it and follow the quick setup wizard</li>
+                            <li>Launch Firefox—this is where your new web starts</li>
                         </ol>
                     </div>
 
                     <!-- Step 2 -->
                     <div id="step-2" class="step-card">
                         <div class="step-number">02</div>
-                        <h3 class="step-title">Install uBlock Origin</h3>
+                        <h3 class="step-title">Add uBlock Origin</h3>
                         <p class="step-description">
-                            Add the most effective ad blocker available. uBlock Origin blocks ads, trackers, and malware
-                            while using minimal system resources.
+                            Shields up. This is the only extension you truly *need* for a clean web.
                         </p>
                         <ol class="step-list">
-                            <li>Open Firefox and navigate to the <a
-                                    href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
-                                    rel="noopener noreferrer">uBlock Origin add-on page</a></li>
+                            <li>Open <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
+                                    rel="noopener noreferrer">uBlock Origin on Add-ons Store</a></li>
                             <li>Click "Add to Firefox"</li>
-                            <li>Confirm the installation when prompted</li>
-                            <li>The uBlock Origin icon will appear in your toolbar</li>
-                            <li>Click the icon to access settings and customize your blocking preferences</li>
+                            <li>Look for the icon in your toolbar—it's already working</li>
                         </ol>
                     </div>
 
                     <!-- Step 3 -->
                     <div id="step-3" class="step-card">
                         <div class="step-number">03</div>
-                        <h3 class="step-title">Install Violentmonkey</h3>
+                        <h3 class="step-title">Enable Violentmonkey</h3>
                         <p class="step-description">
-                            Enable userscripts to customize websites and add extra functionality. This is required for
-                            the
-                            link bypasser scripts to work.
+                            This is your foundation for running custom scripts that "fix" broken site behaviors.
                         </p>
                         <ol class="step-list">
-                            <li>Visit the <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/"
-                                    target="_blank" rel="noopener noreferrer">Violentmonkey add-on page</a></li>
-                            <li>Click "Add to Firefox"</li>
-                            <li>Confirm the installation</li>
-                            <li>The Violentmonkey icon will appear in your toolbar</li>
+                            <li>Go to the <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/"
+                                    target="_blank" rel="noopener noreferrer">Violentmonkey page</a></li>
+                            <li>Click "Add to Firefox" and confirm</li>
                         </ol>
                     </div>
 
                     <!-- Step 4 for link bypasser scripts -->
                     <div id="step-4" class="step-card">
                         <div class="step-number">04</div>
-                        <h3 class="step-title">Install Link Bypasser Userscript</h3>
+                        <h3 class="step-title">Deploy the Link Bypasser</h3>
 
                         <p class="step-description">
-                            Install the link bypasser userscript by <strong>Amm0ni4</strong>.
-                            This script supports many short-link services.
-                            <strong>Important:</strong> A userscript manager like Violentmonkey is required.
+                            No more waiting for timers. This script handles the "Wait 10s" garbage for you.
                         </p>
 
                         <ol class="step-list">
-                            <li>Make sure you've completed Step 3 (Violentmonkey installation)</li>
-
                             <li>
-                                Go to Amm0ni4’s Codeberg page and follow the installation instructions:<br>
-                                <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/" target="_blank"
-                                    rel="noopener noreferrer">
-                                    View installation guide
-                                </a>
-                            </li>
-
-
-                            <li>
-                                Or click here to install the userscript directly:<br>
+                                Click here to install directly via Violentmonkey:<br>
                                 <a href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/raw/branch/main/Bypass_All_Shortlinks.user.js"
                                     target="_blank" rel="noopener noreferrer">
-                                    Install Bypass All Shortlinks userscript
+                                    [One-Click To Install Bypass Script]
                                 </a>
                             </li>
 
-                            <li>Violentmonkey will open an install prompt</li>
-                            <li>Confirm the installation</li>
-                            <li>The script will automatically bypass supported short-link sites</li>
+                            <li>Violentmonkey will pop up—just click "Confirm Installation"</li>
+                            <li>You're all set. No more timers.</li>
                         </ol>
 
                         <div class="alert">
@@ -315,8 +278,9 @@
                                 <line x1="12" y1="16" x2="12.01" y2="16" />
                             </svg>
                             <p>
-                                <strong>Note:</strong> Always follow the instructions on Amm0ni4’s Codeberg page.
-                                Supported sites and setup details may change.
+                                <strong>Pro Tip:</strong> Keep an eye on <a
+                                    href="https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/"
+                                    target="_blank">Amm0ni4's page</a> for updates.
                             </p>
                         </div>
                     </div>
@@ -327,17 +291,15 @@
                         <div class="step-number">05</div>
                         <h3 class="step-title">Configure & Enjoy</h3>
                         <p class="step-description">
-                            Fine-tune your setup for the best experience. Adjust settings, add custom filters, and
-                            explore
-                            advanced features as you get comfortable.
+                            Fine-tune your setup. Adjust settings, add custom filters, and
+                            explore advanced features once you're comfortable.
                         </p>
                         <ul class="step-list">
-                            <li>In uBlock Origin, enable additional filter lists for extra protection</li>
-                            <li>Whitelist trusted sites to support creators you love</li>
-                            <li>Install additional userscripts from <a href="https://greasyfork.org/" target="_blank"
-                                    rel="noopener noreferrer">Greasyfork</a> that match your needs</li>
-                            <li>Regularly update your extensions for the latest features and security patches</li>
-                            <li>Enjoy a cleaner, faster, and more private browsing experience!</li>
+                            <li>Enable extra filter lists in uBlock for maximum protection</li>
+                            <li>Whitelist sites you actually want to support</li>
+                            <li>Check <a href="https://greasyfork.org/" target="_blank"
+                                    rel="noopener noreferrer">Greasyfork</a> for more scripts</li>
+                            <li>Enjoy a web that actually works for you!</li>
                         </ul>
                     </div>
                 </div>
@@ -363,9 +325,8 @@
                         </div>
                         <h3 class="tool-title">Privacy Badger</h3>
                         <p class="tool-description">
-                            Automatically learns to block invisible trackers by <strong>Electronic Frontier Foundation
-                                (EFF)</strong>. A powerful companion to uBlock Origin that focuses specifically on
-                            preventing third-party tracking.
+                            An extra layer of defense that specifically hunts down invisible trackers.
+                            It learns which sites are snooping and shuts them down automatically.
                         </p>
                         <a href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -381,11 +342,10 @@
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">Return YouTube Dislikes</h3>
+                        <h3 class="tool-title">Return dislikes</h3>
                         <p class="tool-description">
-                            Restores the YouTube dislike count by <strong>Dmitry Selivanov & Anarios</strong>. See
-                            accurate
-                            like/dislike ratios to help judge video quality at a glance.
+                            Don't waste time on bad tutorials. This brings back the dislike count so you
+                            can judge video quality at a glance.
                         </p>
                         <a href="https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/"
                             target="_blank" rel="noopener noreferrer" class="tool-link">
@@ -403,13 +363,12 @@
                         </div>
                         <h3 class="tool-title">SponsorBlock</h3>
                         <p class="tool-description">
-                            Skip sponsored segments in YouTube videos automatically by <strong>Ajay
-                                Ramachandran</strong>.
-                            Crowdsourced timestamps help you save time by skipping in-video ads, intros, and outros.
+                            Saves literal hours of your life by skipping "This video is sponsored by..."
+                            segments automatically. It's like magic for your time.
                         </p>
                         <a href="https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
-                            Download SponsorBlock →
+                            Add to Firefox →
                         </a>
                     </div>
                 </div>
@@ -441,14 +400,13 @@
                                 <line x1="1" y1="14" x2="4" y2="14" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">Microsoft Activation Scripts</h3>
+                        <h3 class="tool-title">Microsoft Activation</h3>
                         <p class="tool-description">
-                            Open-source Windows and Office activation scripts by <strong>massgravel</strong>. A
-                            collection
-                            of powerful activation tools for Windows and Microsoft Office products.
+                            The definitive way to activate Windows and Office. Open-source, clean,
+                            and widely trusted by the community.
                         </p>
                         <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                            Visit MAS Website →
+                            Visit massgrave.dev →
                         </a>
                     </div>
 
@@ -461,10 +419,10 @@
                                 <circle cx="12" cy="12" r="2" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">OS Downloads</h3>
+                        <h3 class="tool-title">Clean OS Downloads</h3>
                         <p class="tool-description">
-                            Comprehensive collection of operating system downloads. Get official ISO files for Windows,
-                            Linux distributions, and other operating systems in one convenient location.
+                            The go-to spot for official, untouched ISO files for Windows and Linux.
+                            No bloat, no modified junk.
                         </p>
                         <a href="https://os.click/en" target="_blank" rel="noopener noreferrer" class="tool-link">
                             Browse OS Downloads →
@@ -502,8 +460,8 @@
                         </div>
                         <h3 class="tool-title">qBittorrent</h3>
                         <p class="tool-description">
-                            Free and open-source BitTorrent client by the <strong>qBittorrent community</strong>. A
-                            lightweight alternative to other torrent clients with no ads or bundled software.
+                            Forget uTorrent—get qBittorrent. It's lightweight, open-source, and
+                            doesn't come bundled with ads or mining software.
                         </p>
                         <a href="https://www.qbittorrent.org/download" target="_blank" rel="noopener noreferrer"
                             class="tool-link">
@@ -525,8 +483,8 @@
                         </div>
                         <h3 class="tool-title">AB Download Manager</h3>
                         <p class="tool-description">
-                            A powerful, open-source download manager and IDM alternative by <strong>Amir1376</strong>.
-                            Fast, feature-rich, and built with modern technologies.
+                            A fresh, open-source IDM alternative that actually looks like it belongs in 2026.
+                            Super fast and feature-rich.
                         </p>
                         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                             <a href="https://abdownloadmanager.com/" target="_blank" rel="noopener noreferrer"
@@ -535,7 +493,7 @@
                             </a>
                             <a href="https://github.com/amir1376/ab-download-manager" target="_blank"
                                 rel="noopener noreferrer" class="tool-link" style="margin-top: 10px;">
-                                GitHub Repository →
+                                GitHub →
                             </a>
                         </div>
                     </div>
@@ -550,15 +508,14 @@
                                 <line x1="12" y1="17" x2="12" y2="21" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">Chris Titus Tech WinUtil</h3>
+                        <h3 class="tool-title">WinUtil</h3>
                         <p class="tool-description">
-                            Install programs, tweaks, fixes, and updates by <strong>Chris Titus Tech</strong>. A
-                            powerful
-                            all-in-one utility for optimizing and customizing Windows.
+                            The holy grail of Windows optimization. One script to debloat, install
+                            apps, and fix common Windows annoyances in seconds.
                         </p>
                         <a href="https://github.com/ChrisTitusTech/winutil" target="_blank" rel="noopener noreferrer"
                             class="tool-link">
-                            Visit GitHub Repository →
+                            View WinUtil on GitHub →
                         </a>
                     </div>
 
@@ -573,11 +530,11 @@
                         </div>
                         <h3 class="tool-title">ReVanced</h3>
                         <p class="tool-description">
-                            Continuing the legacy of Vanced by the <strong>ReVanced Team</strong>. Patch your favorite
-                            Android apps to unlock features and remove ads.
+                            Fix your Mobile YouTube experience. Add SponsorBlock, return dislikes,
+                            and remove ads from your Favorite Android apps.
                         </p>
                         <a href="https://revanced.app/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                            Visit ReVanced Website →
+                            Visit ReVanced.app →
                         </a>
                     </div>
 
@@ -626,11 +583,11 @@
                         </div>
                         <h3 class="tool-title">FMHY</h3>
                         <p class="tool-description">
-                            The largest collection of free stuff on the internet. A comprehensive wiki with thousands of
-                            links to free media, tools, games, and educational resources.
+                            The "Free Media Heck Yeah" wiki. The largest, community-vetted collection
+                            of free stuff, tools, and resources on the internet.
                         </p>
                         <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                            Visit FMHY →
+                            Explore FMHY →
                         </a>
                     </div>
                     <!-- Added free-for.dev card -->
@@ -641,15 +598,13 @@
                                 <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">Free for Developers</h3>
+                        <h3 class="tool-title">Free for Devs</h3>
                         <p class="tool-description">
-                            A community-maintained list of developer services offering long-term free tiers, including
-                            SaaS,
-                            PaaS,
-                            IaaS, and infrastructure tools for DevOps and system administrators.
+                            A huge list of software and services that have free tiers for developers.
+                            If you're building something, check here first.
                         </p>
                         <a href="https://free-for.dev/#/" target="_blank" rel="noopener noreferrer" class="tool-link">
-                            Visit free-for.dev →
+                            Browse Free Services →
                         </a>
                     </div>
                     <!-- Public APIs card -->
@@ -662,17 +617,14 @@
                                 <path d="M9 9v11" />
                             </svg>
                         </div>
-
                         <h3 class="tool-title">Public APIs</h3>
-
                         <p class="tool-description">
-                            A community-curated collection of free and public APIs across hundreds of categories such as
-                            development, finance, weather, games, machine learning, and more.
+                            A collective list of free APIs for use in software and web development.
+                            Everything from cat facts to financial data.
                         </p>
-
                         <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer"
                             class="tool-link">
-                            Try Public APIs for free →
+                            Try Public APIs →
                         </a>
                     </div>
 
@@ -682,15 +634,13 @@
 
         </section>
 
-        <!-- Support Section -->
         <section id="support" class="section">
             <div class="container">
                 <div class="support-box">
-                    <h2 class="support-title">Support the Creators</h2>
+                    <h2 class="support-title">Appreciate the tools? Support the creators.</h2>
                     <p class="support-description">
-                        These tools are created and maintained by passionate developers who offer them for free.
-                        Consider
-                        supporting their work:
+                        These tools are built and maintained by people who care about an open web.
+                        If they save you time, consider giving back.
                     </p>
                     <div class="support-links">
                         <a href="https://github.com/gorhill/uBlock#readme" target="_blank" rel="noopener noreferrer"
