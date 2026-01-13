@@ -451,53 +451,53 @@ html {
 .support-box {
 	background: linear-gradient(135deg, var(--accent), #6366f1);
 	border-radius: 1.5rem;
-	padding: 3.5rem 2rem;
+	padding: 2.5rem 1.5rem;
 	text-align: center;
 	color: white;
-	box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+	box-shadow: 0 15px 30px rgba(79, 70, 229, 0.15);
 }
 
 .support-title {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	font-weight: 700;
-	margin-bottom: 1rem;
+	margin-bottom: 0.75rem;
 }
 
 .support-description {
-	font-size: 1.125rem;
-	margin-bottom: 2rem;
-	opacity: 0.95;
+	font-size: 1rem;
+	margin-bottom: 1.5rem;
+	opacity: 0.9;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .support-links {
 	display: flex;
-	gap: 1rem;
+	gap: 0.75rem;
 	justify-content: center;
 	flex-wrap: wrap;
 }
 
 .support-link {
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.1);
 	color: white;
-	padding: 0.75rem 1.5rem;
+	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	text-decoration: none;
 	font-weight: 500;
+	font-size: 0.9rem;
 	transition: transform 0.2s ease, background-color 0.2s ease;
-	/* Updated from all */
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 	will-change: transform;
-	/* Added */
-	/* Added flexbox to align heart icon with text */
 	display: inline-flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 0.4rem;
 }
 
 .support-link:hover {
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.2);
 	transform: translateY(-2px) translateZ(0);
-	/* Updated with translateZ(0) */
 }
 
 /* Disclaimer Section */
@@ -594,12 +594,14 @@ html {
 	}
 
 	.support-links {
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 0.75rem;
 	}
 
 	.support-link {
 		width: 100%;
-		display: block;
+		justify-content: center;
 	}
 }
 
