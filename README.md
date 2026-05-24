@@ -1,53 +1,87 @@
-# ADsBlocking – A Simple Guide to a Cleaner Web
+<p align="center">
+  <img src="readme-preview.png" alt="ADsBlocking preview" width="700">
+</p>
+
+<h1 align="center">🛡️ ADsBlocking</h1>
+
+<p align="center">
+  <strong>A simple guide to a cleaner, faster web.</strong><br>
+  Firefox + uBlock Origin + scripts — no fluff, no ads, no trackers.
+</p>
+
+<p align="center">
+  <a href="https://github.com/E4crypt3d/ADsBlocking/stargazers">
+    <img src="https://img.shields.io/github/stars/E4crypt3d/ADsBlocking?style=for-the-badge&logo=github&color=00d4aa" alt="GitHub stars">
+  </a>
+  <a href="https://github.com/E4crypt3d/ADsBlocking/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge&color=00d4aa" alt="License">
+  </a>
+  <a href="https://adsblocking.pages.dev/">
+    <img src="https://img.shields.io/badge/live-site-00d4aa?style=for-the-badge" alt="Live site">
+  </a>
+</p>
+
+---
 
 ## What is this?
-**ADsBlocking** is a lightweight, single‑page website that walks you through setting up a privacy‑focused browsing experience. It lists the essential tools, scripts, and utilities you need to block ads, trackers, and annoying short‑link timers, all with clear links and short explanations.
+
+A single‑page site that walks you through fixing your browser. No ads, no trackers, no "wait 10 seconds" garbage — just the tools that actually work.
 
 ---
 
-## How to use the site
-1. **Open the website** – visit the live page (e.g., `https://adsblocking.pages.dev/`).
-2. **Explore the sections** – the navigation at the top links to:
-   - **Tools** – core browser tools you’ll need (Firefox, uBlock Origin, a script manager).
-   - **Step‑by‑Step** – a quick guide on installing the tools and the link‑bypass script.
-   - **Optional** – extra utilities for power‑users (Privacy Badger, SponsorBlock, etc.).
-   - **Utilities** – handy downloads such as Windows activation, clean ISO links, and the Morphe patcher.
-   - **Collection** – curated lists of free resources (FMHY, Free‑for‑Dev, Public APIs, etc.).
-   - **Support** – donation links to thank the creators of the tools you use.
-3. **Toggle dark mode** – click the moon/sun button in the top‑right corner; your preference is saved for future visits.
-4. **Back to top** – after scrolling down, a small button appears in the bottom‑right; click it to return to the top of the page.
+## Features
+
+- **Dark / light theme** — click the toggle, your preference is saved
+- **Step‑by‑step setup** — takes about 5 minutes
+- **Tools + explanations** — what each thing is and why you want it
+- **Support links** — give back to the people who build this stuff
+- **Completely static** — no tracking, no bloat, loads instantly
 
 ---
 
-## Main tools you’ll install
-| Tool | What it does | Quick link |
-|------|--------------|------------|
-| **Firefox** | A privacy‑focused browser that doesn’t force tracking. | <https://www.mozilla.org/firefox/> |
-| **uBlock Origin** | Fast, open‑source ad‑blocker. | <https://addons.mozilla.org/firefox/addon/ublock-origin/> |
-| **Violentmonkey** (recommended) | Runs user scripts that bypass timers and clean up pages. | <https://addons.mozilla.org/firefox/addon/violentmonkey/> |
-| **Tampermonkey** (alternative) | Another popular script manager. | <https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/> |
-| **Link Bypasser script** | Skips “wait 10 seconds” short‑link pages automatically. | <https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated/> |
-| **Morphe** | Patches YouTube, YouTube Music, and Reddit to add ad‑blocking, SponsorBlock, etc. | <https://morphe.software/> |
-| **ReVanced (pre‑built APKs)** | Ready‑to‑use patched YouTube APKs (if you prefer Android). | <https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root> |
+## Tools listed
+
+| Tool | What it does |
+|------|-------------|
+| **Firefox** | Browser that doesn't lock you out for blocking ads |
+| **uBlock Origin** | Fast, open‑source ad blocker |
+| **Violentmonkey** | Runs custom scripts to skip timers and clean up pages |
+| **Tampermonkey** | Alternative script manager |
+| **Link Bypasser script** | Skips "wait 10s" short‑link pages |
+| **Morphe** | Patches YouTube / Reddit with ad blocking + SponsorBlock |
+| **ReVanced (APKs)** | Pre‑patched YouTube APKs for Android |
+
+See the full list on the [live site](https://adsblocking.pages.dev/).
 
 ---
 
-## Why use these instead of the default options?
-- **No trackers** – Firefox and uBlock Origin block the majority of trackers out of the box.
-- **Speed** – Blocking ads reduces page load times.
-- **Control** – User scripts let you customise how sites behave (e.g., removing timers).
-- **Open source** – All listed tools are free and community‑maintained.
+## How to use
+
+1. Open [adsblocking.pages.dev](https://adsblocking.pages.dev/)
+2. Follow the sections in order — **Tools → Setup → Optional**
+3. Install Firefox → add uBlock Origin → add a script manager → install the bypasser
+4. Done. That's it.
 
 ---
 
-## Supporting the creators
-At the bottom of the page you’ll find **Support** links. Clicking any of them will take you to the author’s donation or contribution page. If the tools help you, consider giving back!
+## Why
+
+Ads and trackers wreck the browsing experience. This is the setup I use personally — everything listed here is something I run daily.
+
+---
+
+## Support the creators
+
+The bottom of the page has donation and support links for everyone who made these tools. If they save you time, throw them a few bucks.
 
 ---
 
 ## Disclaimer
-I don’t host or mirror any of the linked files. All tools, scripts, and downloads are provided by their original creators. If a link breaks or a service changes, that’s out of my control. Always read what you’re installing and understand the script’s behavior before running it.
+
+I don't host or mirror anything. All links point to original sources. If something breaks or disappears, that's on them, not me. Always read what you're installing.
 
 ---
 
-*Enjoy a cleaner, faster web experience!*
+<p align="center">
+  Made by <a href="https://github.com/E4crypt3d">E4CRYPT3D</a>
+</p>

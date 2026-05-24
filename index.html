@@ -11,11 +11,25 @@
         content="I got tired of ads and trackers breaking every site I visit. This is how I fixed it using Firefox and some scripts.">
 
     <meta name="author" content="E4CRYPT3D">
-    <meta name="theme-color" content="#8b5cf6">
+    <meta name="theme-color" content="#00d4aa">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://adsblocking.pages.dev/">
 
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "ADsBlocking",
+            "description": "Stop the web from sucking. Firefox + uBlock Origin + scripts guide.",
+            "url": "https://adsblocking.pages.dev/",
+            "author": {
+                "@type": "Person",
+                "name": "E4CRYPT3D",
+                "url": "https://github.com/E4crypt3d"
+            }
+        }
+    </script>
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="ADsBlocking - Stop the web from sucking">
@@ -34,6 +48,8 @@
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <script>
@@ -65,7 +81,7 @@
                 <a href="#fcc" class="nav-link">Collection</a>
 
             </div>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" aria-hidden="true">
                     <circle cx="12" cy="12" r="5" />
@@ -91,11 +107,11 @@
             <div class="hero-content">
                 <h1 class="hero-title">Browse without the garbage</h1>
                 <p class="hero-subtitle">
-                    Ads were driving me insane, so I put this together. just the tools I use to make
+                    Ads were driving me insane, so I put this together. Just the tools I use to make
                     the web usable again.
                 </p>
 
-                <a href="#support" class="support-link support-box">Support the people who build these</a>
+                <a href="#support" class="support-link">Support the people who build these</a>
             </div>
         </section>
 
@@ -103,7 +119,7 @@
             <div class="container">
                 <h2 class="section-title">The Tools</h2>
                 <p class="section-description">
-                    I use these four. They're open source and they actually work.
+                    I use these four daily. All open source, all solid.
                 </p>
 
                 <div class="tools-grid">
@@ -139,8 +155,7 @@
                         </div>
                         <h3 class="tool-title">uBlock Origin</h3>
                         <p class="tool-description">
-                            If you don't have this, the web is unusable. It's fast, doesn't sell your data, and stops
-                            the trash. Just install it.
+                            Best ad blocker out there. Fast, no tracking, kills the garbage. Just install it.
                         </p>
                         <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -158,8 +173,7 @@
                         </div>
                         <h3 class="tool-title">Violentmonkey</h3>
                         <p class="tool-description">
-                            Runs the scripts that fix the internet. I use it to bypass timers and clean up site UI.
-                            Simple as that.
+                            Runs custom scripts on any site. I use it to skip link timers and clean up cluttered UI.
                         </p>
                         <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -439,7 +453,7 @@
                     <div class="tool-card" id="os-downloads">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <circle cx="12" cy="12" r="10" />
                                 <circle cx="12" cy="12" r="6" />
                                 <circle cx="12" cy="12" r="2" />
@@ -457,7 +471,7 @@
                     <div class="tool-card" id="idm-trial-reset">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="23 4 23 10 17 10" />
                                 <polyline points="1 20 1 14 7 14" />
                                 <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
@@ -465,7 +479,7 @@
                         </div>
                         <h3 class="tool-title">IDM Trial Reset</h3>
                         <p class="tool-description">
-                            Resets the IDM trial so you don't have to pay for it. Simple utility by J2TEAM.
+                            Resets the IDM trial. That's it. Simple utility by J2TEAM.
                         </p>
                         <a href="https://github.com/J2TEAM/idm-trial-reset/releases/tag/v1.0.0" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -476,7 +490,7 @@
                     <div class="tool-card" id="qbittorrent">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="7 10 12 15 17 10" />
                                 <line x1="12" y1="15" x2="12" y2="3" />
@@ -496,7 +510,7 @@
                     <div class="tool-card" id="ab-download-manager">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="7 10 12 15 17 10" />
                                 <line x1="12" y1="15" x2="12" y2="3" />
@@ -521,7 +535,7 @@
                     <div class="tool-card" id="winutil">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                                 <line x1="8" y1="21" x2="16" y2="21" />
                                 <line x1="12" y1="17" x2="12" y2="21" />
@@ -541,7 +555,7 @@
                     <div class="tool-card" id="morphe">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polygon points="23 7 16 12 23 17 23 7" />
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                             </svg>
@@ -559,7 +573,7 @@
                     <div class="tool-card" id="revanced-non-root">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="17 8 12 3 7 8" />
                                 <line x1="12" y1="3" x2="12" y2="15" />
@@ -591,7 +605,7 @@
                     <div class="tool-card" id="fmhy">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                             </svg>
@@ -608,7 +622,7 @@
                     <div class="tool-card" id="free-for-dev">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
                             </svg>
                         </div>
@@ -623,7 +637,7 @@
                     <div class="tool-card" id="public-apis">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M4 4h16v16H4z" />
                                 <path d="M4 9h16" />
                                 <path d="M9 9v11" />
@@ -642,7 +656,7 @@
                     <div class="tool-card" id="piracy">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
@@ -668,7 +682,7 @@
                 <div class="support-box">
                     <h2 class="support-title">Support the creators.</h2>
                     <p class="support-description">
-                        People spend their free time building these tool for us. If they save you time, throw them some
+                        People spend their free time building these tools for us. If they save you time, throw them some
                         money.
                     </p>
                     <div class="support-links">
@@ -881,7 +895,7 @@
         </div>
     </footer>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="18 15 12 9 6 15"></polyline>
