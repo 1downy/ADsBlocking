@@ -33,6 +33,17 @@ Firefox is the only browser I'm willing to use. It's not perfect, but at least i
 
 [Download Firefox →](https://www.mozilla.org/firefox/)
 
+### Firefox IP Protection
+
+Firefox has a built-in proxy that hides your IP from trackers. You get 50 GB of data every month — free, no account needed.
+
+1. Type `about:config` in the address bar and hit Enter.
+2. Click **Accept the Risk and Continue**.
+3. Search for `browser.ipprotection.enabled`.
+4. If it says `false`, click the toggle arrow or double-click it to switch to `true`.
+
+The shield icon shows up in your toolbar once it's enabled.
+
 ### uBlock Origin
 
 Best ad blocker out there. Fast, no tracking, kills the garbage. Just install it.
