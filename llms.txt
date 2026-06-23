@@ -1,0 +1,40 @@
+# ADsBlocking Guide
+> How to block ads using Firefox, uBlock Origin, user scripts, and other privacy tools.
+
+## Tools
+- [Firefox Browser](https://www.mozilla.org/firefox/)
+- [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)
+- [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
+- [Tampermonkey](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
+- [Link Bypasser Script](https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated/)
+
+## Optional Extensions
+- [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
+- [Return YouTube Dislikes](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/)
+- [SponsorBlock](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)
+- [DeArrow](https://dearrow.ajay.app/)
+
+## Utilities
+- [MAS Windows Activation](https://massgrave.dev/)
+- [Clean OS ISOs](https://os.click/en)
+- [IDM Trial Reset](https://github.com/J2TEAM/idm-trial-reset/releases/tag/v1.0.0)
+- [qBittorrent](https://www.qbittorrent.org/download)
+- [AB Download Manager](https://abdownloadmanager.com/)
+- [WinUtil by Chris Titus](https://github.com/ChrisTitusTech/winutil)
+- [Morphe](https://morphe.software/)
+- [ReVanced Non-Root](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root)
+
+## Resource Collections
+- [FMHY](https://fmhy.net/)
+- [Free for Dev](https://free-for.dev/)
+- [Public APIs](https://github.com/public-apis/public-apis)
+- [r/Piracy Megathread](https://old.reddit.com/r/Piracy/wiki/megathread)
+
+## Support
+- [uBlock Origin (Raymond Hill)](https://github.com/gorhill/uBlock#readme)
+- [Violentmonkey](https://github.com/violentmonkey/violentmonkey)
+- [Tampermonkey](https://www.tampermonkey.net/)
+- [EFF (Privacy Badger)](https://www.eff.org/)
+- [Return YouTube Dislikes](https://returnyoutubedislike.com/donate)
+- [SponsorBlock (Ajay Ramachandran)](https://sponsor.ajay.app/)
+- [Mozilla Foundation](https://www.mozilla.org/foundation/)
