@@ -5,53 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ADsBlocking - Stop the web from sucking</title>
+    <title>ADsBlocking: Your Guide to a Clean & Ad-Free Web Experience</title>
 
     <meta name="description"
-        content="I got tired of ads and trackers breaking every site I visit. This is how I fixed it using Firefox and some scripts.">
+        content="A comprehensive guide to stopping ads and trackers for a faster, safer web experience. Learn how to configure your browser with the best extensions and scripts.">
 
     <meta name="author" content="E4CRYPT3D">
     <meta name="theme-color" content="#00d4aa">
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://adsblocking.pages.dev/">
+    <link rel="canonical" href="https://adsblocking.qzz.io/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "ADsBlocking",
-            "description": "Stop the web from sucking. Firefox + uBlock Origin + scripts guide.",
-            "url": "https://adsblocking.pages.dev/",
-            "author": {
-                "@type": "Person",
-                "name": "E4CRYPT3D",
-                "url": "https://github.com/E4crypt3d"
-            }
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://adsblocking.qzz.io/#website",
+                    "url": "https://adsblocking.qzz.io/",
+                    "name": "ADsBlocking Guide",
+                    "description": "A comprehensive guide to an ad-free web experience.",
+                    "publisher": {
+                        "@id": "https://adsblocking.qzz.io/#organization"
+                    }
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://adsblocking.qzz.io/#organization",
+                    "name": "ADsBlocking Guide",
+                    "url": "https://adsblocking.qzz.io/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://adsblocking.qzz.io/preview.png"
+                    }
+                },
+                {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "What is the best ad blocker?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "uBlock Origin is recommended as the most efficient and reliable ad blocker for web browsers."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "How can I block tracking scripts?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Using tools like uBlock Origin along with privacy-focused browser settings and additional extensions can effectively block tracking scripts."
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     </script>
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ADsBlocking - Stop the web from sucking">
+    <meta property="og:title" content="ADsBlocking: Your Guide to a Clean & Ad-Free Web Experience">
     <meta property="og:description"
-        content="I got tired of ads and trackers breaking every site I visit. This is how I fixed it.">
-    <meta property="og:url" content="https://adsblocking.pages.dev/">
-    <meta property="og:image" content="https://adsblocking.pages.dev/preview.png">
+        content="A comprehensive guide to stopping ads and trackers for a faster, safer web experience.">
+    <meta property="og:url" content="https://adsblocking.qzz.io/">
+    <meta property="og:image" content="https://adsblocking.qzz.io/preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ADsBlocking - Fix your browser">
-    <meta name="twitter:description" content="Stop ads, trackers, and trash short links.">
-    <meta name="twitter:image" content="https://adsblocking.pages.dev/preview.png">
+    <meta name="twitter:title" content="ADsBlocking: Your Guide to a Clean & Ad-Free Web Experience">
+    <meta name="twitter:description" content="A comprehensive guide to stopping ads and trackers for a faster, safer web experience.">
+    <meta name="twitter:image" content="https://adsblocking.qzz.io/preview.png">
 
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+        href="data:image/svg+xml,<svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="styles.css" as="style">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
     <script>
         (function () {
             const STORAGE_KEY = "theme";
@@ -61,7 +100,7 @@
             document.documentElement.setAttribute("data-theme", theme);
         })();
     </script>
-    <script src="script.js" defer></script>
+    <script src="script.min.js" defer></script>
 </head>
 
 
@@ -70,8 +109,8 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="nav" role="navigation">
         <div class="nav-container">
-            <a href="https://adsblocking.pages.dev/" style="text-decoration: none;">
-                <h2 class="nav-title"><span class="nav-icon">🛡️</span> ADsBlocking</h2>
+            <a href="https://adsblocking.qzz.io/" style="text-decoration: none;">
+                <div class="nav-title"><span class="nav-icon">🛡️</span> ADsBlocking</div>
             </a>
             <div class="nav-links">
                 <a href="#tools" class="nav-link">Tools</a>
@@ -82,8 +121,8 @@
 
             </div>
             <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" aria-hidden="true">
+                <svg aria-hidden="true" class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" >
                     <circle cx="12" cy="12" r="5" />
                     <line x1="12" y1="1" x2="12" y2="3" />
                     <line x1="12" y1="21" x2="12" y2="23" />
@@ -94,8 +133,8 @@
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" aria-hidden="true">
+                <svg aria-hidden="true" class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" >
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>
             </button>
@@ -105,7 +144,7 @@
     <main id="main-content" role="main" tabindex="-1">
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Browse without the garbage</h1>
+                <h1 class="hero-title">Experience a Cleaner, Faster Web</h1>
                 <p class="hero-subtitle">
                     Ads were driving me insane, so I put this together. Just the tools I use to make
                     the web usable again.
@@ -125,8 +164,8 @@
                 <div class="tools-grid">
                     <div class="tool-card" id="firefox">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <circle cx="12" cy="12" r="10" />
                                 <path
                                     d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -147,8 +186,8 @@
 
                     <div class="tool-card" id="ublock-origin">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                 <path d="M9 12l2 2 4-4" />
                             </svg>
@@ -165,8 +204,8 @@
 
                     <div class="tool-card" id="violentmonkey">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path
                                     d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                             </svg>
@@ -183,8 +222,8 @@
 
                     <div class="tool-card" id="tampermonkey">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
@@ -201,8 +240,8 @@
 
                     <div class="tool-card">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                                 <polyline points="15 3 21 3 21 9" />
                                 <line x1="10" y1="14" x2="21" y2="3" />
@@ -225,7 +264,7 @@
         <section id="setup" class="section section-alt">
             <div class="container">
                 <h2 class="section-title">Step-by-Step</h2>
-                <p class="section-description">Do this in order. Takes like 5 minutes.</p>
+                <p class="section-description">Do this in order. Setup takes only a few minutes.</p>
 
                 <div class="steps">
                     <div id="step-1" class="step-card">
@@ -295,8 +334,8 @@
                         </ol>
 
                         <div class="alert">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <circle cx="12" cy="12" r="10" />
                                 <line x1="12" y1="8" x2="12" y2="12" />
                                 <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -339,8 +378,8 @@
                 <div class="tools-grid">
                     <div class="tool-card" id="privacy-badger">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                             </svg>
@@ -358,8 +397,8 @@
 
                     <div class="tool-card" id="return-youtube-dislikes">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <polygon points="23 7 16 12 23 17 23 7" />
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                             </svg>
@@ -377,8 +416,8 @@
 
                     <div class="tool-card" id="sponsorblock">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <circle cx="12" cy="12" r="10" />
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
@@ -394,8 +433,8 @@
                     </div>
                     <div class="tool-card" id="dearrow">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path
                                     d="M23 12l-2.44-2.44A2 2 0 0 0 19.14 9H17a2 2 0 0 1-2-2V4.86a2 2 0 0 0-.56-1.42L12 1m0 0l-2.44 2.44a2 2 0 0 0-.56 1.42V7a2 2 0 0 1-2 2H4.86a2 2 0 0 0-1.42.56L1 12m0 0l2.44 2.44a2 2 0 0 0 1.42.56H7a2 2 0 0 1 2 2v2.14a2 2 0 0 0 .56 1.42L12 23m0 0l2.44-2.44a2 2 0 0 0 .56-1.42V17a2 2 0 0 1 2-2h2.14a2 2 0 0 0 1.42-.56L23 12z" />
                             </svg>
@@ -427,8 +466,8 @@
                 <div class="tools-grid">
                     <div class="tool-card" id="mas">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
                                 <rect x="9" y="9" width="6" height="6" />
                                 <line x1="9" y1="1" x2="9" y2="4" />
@@ -452,8 +491,8 @@
 
                     <div class="tool-card" id="os-downloads">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <circle cx="12" cy="12" r="10" />
                                 <circle cx="12" cy="12" r="6" />
                                 <circle cx="12" cy="12" r="2" />
@@ -470,8 +509,8 @@
 
                     <div class="tool-card" id="idm-trial-reset">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <polyline points="23 4 23 10 17 10" />
                                 <polyline points="1 20 1 14 7 14" />
                                 <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
@@ -489,8 +528,8 @@
 
                     <div class="tool-card" id="qbittorrent">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="7 10 12 15 17 10" />
                                 <line x1="12" y1="15" x2="12" y2="3" />
@@ -498,7 +537,7 @@
                         </div>
                         <h3 class="tool-title">qBittorrent</h3>
                         <p class="tool-description">
-                            uTorrent is trash now. This is open source, light, and doesn't have ads or miners.
+                            A reliable, open-source alternative to uTorrent without ads or miners.
                         </p>
                         <a href="https://www.qbittorrent.org/download" target="_blank" rel="noopener noreferrer"
                             class="tool-link">
@@ -509,8 +548,8 @@
 
                     <div class="tool-card" id="ab-download-manager">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="7 10 12 15 17 10" />
                                 <line x1="12" y1="15" x2="12" y2="3" />
@@ -534,8 +573,8 @@
 
                     <div class="tool-card" id="winutil">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                                 <line x1="8" y1="21" x2="16" y2="21" />
                                 <line x1="12" y1="17" x2="12" y2="21" />
@@ -554,8 +593,8 @@
 
                     <div class="tool-card" id="morphe">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <polygon points="23 7 16 12 23 17 23 7" />
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                             </svg>
@@ -572,8 +611,8 @@
 
                     <div class="tool-card" id="revanced-non-root">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="17 8 12 3 7 8" />
                                 <line x1="12" y1="3" x2="12" y2="15" />
@@ -604,8 +643,8 @@
 
                     <div class="tool-card" id="fmhy">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                             </svg>
@@ -621,8 +660,8 @@
                     </div>
                     <div class="tool-card" id="free-for-dev">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
                             </svg>
                         </div>
@@ -636,8 +675,8 @@
                     </div>
                     <div class="tool-card" id="public-apis">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M4 4h16v16H4z" />
                                 <path d="M4 9h16" />
                                 <path d="M9 9v11" />
@@ -655,12 +694,12 @@
 
                     <div class="tool-card" id="piracy">
                         <div class="tool-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">Piracy: ꜱᴀɪʟ ᴛʜᴇ ʜɪɢʜ ꜱᴇᴀꜱ</h3>
+                        <h3 class="tool-title">Piracy: Sail the High Seas</h3>
                         <p class="tool-description">
                             ⚓ Dedicated to the discussion of digital piracy, including ethical problems and legal
                             advancements.
@@ -688,8 +727,8 @@
                     <div class="support-links">
                         <a href="https://github.com/gorhill/uBlock#readme" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -697,8 +736,8 @@
                         </a>
                         <a href="https://github.com/violentmonkey/violentmonkey" target="_blank"
                             rel="noopener noreferrer" class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -706,8 +745,8 @@
                         </a>
                         <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -715,8 +754,8 @@
                         </a>
                         <a href="https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated/" target="_blank"
                             rel="noopener noreferrer" class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -724,8 +763,8 @@
                         </a>
                         <a href="https://www.mozilla.org/foundation/" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -733,8 +772,8 @@
                         </a>
                         <a href="https://www.eff.org/pages/other-ways-give-and-donor-support" target="_blank"
                             rel="noopener noreferrer" class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -742,8 +781,8 @@
                         </a>
                         <a href="https://returnyoutubedislike.com/donate" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -751,8 +790,8 @@
                         </a>
                         <a href="https://sponsor.ajay.app/" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -760,16 +799,16 @@
                         </a>
                         <a href="https://github.com/amir1376/ab-download-manager/blob/master/DONATE.md" target="_blank"
                             rel="noopener noreferrer" class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
                             Support Amir1376 (AB Download Manager)
                         </a>
                         <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer" class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -777,8 +816,8 @@
                         </a>
                         <a href="https://github.com/J2TEAM/idm-trial-reset" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -786,8 +825,8 @@
                         </a>
                         <a href="https://www.qbittorrent.org/donate" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -795,8 +834,8 @@
                         </a>
                         <a href="https://github.com/sponsors/ChrisTitusTech" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -804,8 +843,8 @@
                         </a>
                         <a href="https://morphe.software/donate" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -813,8 +852,8 @@
                         </a>
                         <a href="https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root" target="_blank"
                             rel="noopener noreferrer" class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -822,8 +861,8 @@
                         </a>
                         <a href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -831,8 +870,8 @@
                         </a>
                         <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -840,8 +879,8 @@
                         </a>
                         <a href="https://www.reddit.com/r/Piracy/" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                             </svg>
@@ -849,8 +888,8 @@
                         </a>
                         <a href="https://github.com/ajayyy/DeArrow" target="_blank" rel="noopener noreferrer"
                             class="support-link">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
                                 <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                                 <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
                                 <line x1="6" y1="1" x2="6" y2="4"></line>
@@ -864,6 +903,24 @@
             </div>
         </section>
 
+
+        <section id="about" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About the Author</h2>
+                    <p class="section-subtitle">Why trust this guide?</p>
+                </div>
+                <div class="card about-card" style="padding: 2rem;">
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                        This guide is maintained by <a href="https://github.com/E4crypt3d" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">E4CRYPT3D</a>, a technical specialist and web performance enthusiast dedicated to improving user experiences across the internet.
+                    </p>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        All tools and extensions recommended here have been thoroughly tested for safety, privacy, and effectiveness. We focus on open-source solutions that respect your data and provide the best possible browsing environment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer-container" role="contentinfo">
@@ -871,7 +928,7 @@
         <section class="disclaimer-section">
             <div class="container">
                 <div class="disclaimer-box">
-                    <h3 class="disclaimer-title">⚠️ Disclaimer</h3>
+                    <h2 class="disclaimer-title">⚠️ Disclaimer</h2>
                     <p class="disclaimer-text">
                         I don’t host or mirror anything here.
                         All links point to original sources, so if something breaks, changes, or disappears,
@@ -896,8 +953,8 @@
     </footer>
 
     <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round" >
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
