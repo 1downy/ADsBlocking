@@ -164,7 +164,7 @@ I'm sick of seeing open-mouth thumbnails and red arrows. This replaces clickbait
 
 ## Utilities
 
-Software you should probably have if you're on Windows.
+Utilities I actually install. Mostly Windows, with the Android ones last.
 
 ### Windows Activation (MAS)
 
