@@ -391,6 +391,7 @@ svg {
 }
 
 .tool-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -399,6 +400,69 @@ svg {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+}
+
+/* zero-size jump targets that keep old #violentmonkey / #tampermonkey links working */
+.anchor-target {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.tool-card-choice {
+    border-color: var(--line-strong);
+}
+
+.tool-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-inline-start: 0.4rem;
+    padding: 0.14rem 0.5rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: 0.15em;
+}
+
+/* Stacked hover panels: pointing at a link swaps the card's own copy to that
+   tool. Both variants occupy the same grid cell, so nothing reflows. */
+.tool-card-choice .tool-title,
+.tool-card-choice .tool-description {
+    display: grid;
+}
+
+.tool-card-choice .opt {
+    grid-area: 1 / 1;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.tool-card-choice .opt-vm,
+.tool-card-choice .opt-tm {
+    opacity: 0;
+    transform: translateY(0.4rem);
+    pointer-events: none;
+}
+
+.tool-card-choice:has(.link-vm:hover, .link-vm:focus-visible) .opt-base,
+.tool-card-choice:has(.link-tm:hover, .link-tm:focus-visible) .opt-base {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+}
+
+.tool-card-choice:has(.link-vm:hover, .link-vm:focus-visible) .opt-vm,
+.tool-card-choice:has(.link-tm:hover, .link-tm:focus-visible) .opt-tm {
+    opacity: 1;
+    transform: none;
 }
 
 .tool-icon {
@@ -848,6 +912,10 @@ code {
     .tool-card:hover {
         border-color: var(--line-strong);
         background: var(--surface-alt);
+    }
+
+    .tool-card-choice:hover {
+        border-color: var(--accent);
     }
 }
 

@@ -135,7 +135,9 @@
                         </a>
                     </div>
 
-                    <div class="tool-card" id="violentmonkey">
+                    <div class="tool-card tool-card-choice" id="script-managers">
+                        <span class="anchor-target" id="violentmonkey"></span>
+                        <span class="anchor-target" id="tampermonkey"></span>
                         <div class="tool-icon">
                             <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
@@ -143,32 +145,29 @@
                                     d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                             </svg>
                         </div>
-                        <h3 class="tool-title">Violentmonkey</h3>
+                        <h3 class="tool-title">
+                            <span class="opt opt-base">Script Managers <span class="tool-badge">Pick one</span></span>
+                            <span class="opt opt-vm">Violentmonkey</span>
+                            <span class="opt opt-tm">Tampermonkey</span>
+                        </h3>
                         <p class="tool-description">
-                            Runs custom scripts on any site. I use it to skip link timers and clean up cluttered UI.
+                            <span class="opt opt-base">Two apps, one job. Violentmonkey is my pick, Tampermonkey is
+                                the fallback. Don't install both.</span>
+                            <span class="opt opt-vm">Open source, no account needed, no premium nag. Skips the link
+                                timers and cleans up cluttered UI — this is what runs my scripts.</span>
+                            <span class="opt opt-tm">The one most userscripts are written against. No account needed
+                                on Firefox, and the same scripts work.</span>
                         </p>
-                        <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
-                            rel="noopener noreferrer" class="tool-link">
-                            Add to Firefox →
-                        </a>
-                    </div>
-
-                    <div class="tool-card" id="tampermonkey">
-                        <div class="tool-icon">
-                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                            </svg>
+                        <div class="tool-links">
+                            <a href="https://addons.mozilla.org/firefox/addon/violentmonkey/" target="_blank"
+                                rel="noopener noreferrer" class="tool-link link-vm">
+                                Violentmonkey →
+                            </a>
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank"
+                                rel="noopener noreferrer" class="tool-link link-tm">
+                                Tampermonkey →
+                            </a>
                         </div>
-                        <h3 class="tool-title">Tampermonkey</h3>
-                        <p class="tool-description">
-                            Another script manager. Use it if you don't like Violentmonkey for some reason. It does
-                            the same thing.
-                        </p>
-                        <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank"
-                            rel="noopener noreferrer" class="tool-link">
-                            Add to Firefox →
-                        </a>
                     </div>
 
                     <div class="tool-card">

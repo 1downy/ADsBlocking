@@ -39,17 +39,11 @@ Best ad blocker out there. Fast, no tracking, kills the garbage. Just install it
 
 [Add to Firefox →](https://addons.mozilla.org/firefox/addon/ublock-origin/)
 
-### Violentmonkey
+### Script Managers — pick one
 
-Runs custom scripts on any site. I use it to skip link timers and clean up cluttered UI.
+Two apps, one job: run user scripts. I use Violentmonkey. Tampermonkey does the same thing if you already know it. Don't install both.
 
-[Add to Firefox →](https://addons.mozilla.org/firefox/addon/violentmonkey/)
-
-### Tampermonkey
-
-Another script manager. Use it if you don't like Violentmonkey for some reason. It does the same thing.
-
-[Add to Firefox →](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
+[Violentmonkey →](https://addons.mozilla.org/firefox/addon/violentmonkey/) \| [Tampermonkey →](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
 
 ### Link Bypasser
 
