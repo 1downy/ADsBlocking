@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ADsBlocking: Your Guide to a Clean & Ad-Free Web Experience</title>
-    <meta name="description" content="A comprehensive guide to stopping ads and trackers for a faster, safer web experience. Learn how to configure your browser with the best extensions and scripts.">
+    <title>How to Block Ads: uBlock Origin, Firefox &amp; DNS Setup</title>
+    <meta name="description" content="Block ads and trackers everywhere: Firefox plus uBlock Origin, userscripts, and encrypted DNS through Cloudflare 1.1.1.1 or NextDNS. Free, ten minutes.">
     <meta name="author" content="E4CRYPT3D">
+    <meta name="application-name" content="ADsBlocking Guide">
     <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#08090b" media="(prefers-color-scheme: dark)">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://adsblocking.qzz.io/">
     <link rel="alternate" type="text/plain" title="ADsBlocking Guide for LLMs" href="/llms.txt">
 
@@ -20,20 +21,24 @@
     <!-- One stylesheet, system fonts: no third-party requests, no render-blocking webfonts -->
     <link rel="stylesheet" href="styles.min.css">
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://adsblocking.qzz.io/#website","url":"https://adsblocking.qzz.io/","name":"ADsBlocking Guide","description":"A comprehensive guide to an ad-free web experience.","publisher":{"@id":"https://adsblocking.qzz.io/#organization"}},{"@type":"Organization","@id":"https://adsblocking.qzz.io/#organization","name":"ADsBlocking Guide","url":"https://adsblocking.qzz.io/","logo":{"@type":"ImageObject","url":"https://adsblocking.qzz.io/preview.png"}},{"@type":"ImageObject","@id":"https://adsblocking.qzz.io/#preview-image","url":"https://adsblocking.qzz.io/preview.png","width":1200,"height":630,"caption":"ADsBlocking guide preview showing Firefox, uBlock Origin, and script manager setup"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best ad blocker?","acceptedAnswer":{"@type":"Answer","text":"uBlock Origin is recommended as the most efficient and reliable ad blocker for web browsers."}},{"@type":"Question","name":"How can I block tracking scripts?","acceptedAnswer":{"@type":"Answer","text":"Using tools like uBlock Origin along with privacy-focused browser settings and additional extensions can effectively block tracking scripts."}}]}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://adsblocking.qzz.io/#website","url":"https://adsblocking.qzz.io/","name":"ADsBlocking Guide","description":"A guide to blocking ads, trackers and junk in the browser and at the DNS level.","inLanguage":"en","publisher":{"@id":"https://adsblocking.qzz.io/#organization"}},{"@type":"Organization","@id":"https://adsblocking.qzz.io/#organization","name":"ADsBlocking Guide","url":"https://adsblocking.qzz.io/","logo":{"@type":"ImageObject","url":"https://adsblocking.qzz.io/logo.svg","width":512,"height":512,"caption":"ADsBlocking shield logo"}},{"@type":"WebPage","@id":"https://adsblocking.qzz.io/#webpage","url":"https://adsblocking.qzz.io/","name":"How to Block Ads: uBlock Origin, Firefox & DNS Setup","description":"Block ads and trackers everywhere: Firefox plus uBlock Origin, userscripts, and encrypted DNS through Cloudflare 1.1.1.1 or NextDNS.","isPartOf":{"@id":"https://adsblocking.qzz.io/#website"},"primaryImageOfPage":{"@id":"https://adsblocking.qzz.io/#preview-image"},"inLanguage":"en","dateModified":"2026-11-03","author":{"@type":"Person","name":"E4CRYPT3D","url":"https://github.com/E4crypt3d"}},{"@type":"ImageObject","@id":"https://adsblocking.qzz.io/#preview-image","url":"https://adsblocking.qzz.io/preview.png","width":1200,"height":630,"caption":"ADsBlocking guide preview showing Firefox, uBlock Origin, and script manager setup"},{"@type":"FAQPage","@id":"https://adsblocking.qzz.io/#faq","mainEntity":[{"@type":"Question","name":"What is the best ad blocker?","acceptedAnswer":{"@type":"Answer","text":"uBlock Origin. It is free, open source, uses less memory than the alternatives, and its filter lists block both ads and trackers."}},{"@type":"Question","name":"Does blocking ads break websites?","acceptedAnswer":{"@type":"Answer","text":"Rarely. uBlock Origin's Easy mode is the default and breaks almost nothing. If a site misbehaves, turn blocking off for that site from the uBlock icon."}},{"@type":"Question","name":"Do I need a script manager?","acceptedAnswer":{"@type":"Answer","text":"Only if you run userscripts such as the link bypasser. Violentmonkey is the recommended pick; if you install no scripts you can skip it."}},{"@type":"Question","name":"Is all of this free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every browser tool here is free and open source. NextDNS is free for 300,000 DNS queries per month and costs $1.99 per month after that."}},{"@type":"Question","name":"What is DNS over HTTPS and should I use it?","acceptedAnswer":{"@type":"Answer","text":"DNS over HTTPS encrypts the lookups that turn domain names into addresses. Set at the device level, through Cloudflare 1.1.1.1 or NextDNS, it also covers apps and other browsers that a browser extension cannot reach."}},{"@type":"Question","name":"Does this work on Chrome, Android or iPhone?","acceptedAnswer":{"@type":"Answer","text":"The guide targets Firefox. Firefox on Android supports uBlock Origin. Chrome's full uBlock Origin was disabled by Manifest V3, leaving the reduced uBO Lite. On iPhone, use a Safari content blocker."}},{"@type":"Question","name":"Do I need both Cloudflare and NextDNS?","acceptedAnswer":{"@type":"Answer","text":"No. Use one resolver. Cloudflare 1.1.1.1 needs no account; NextDNS adds per-profile filtering, query logs and parental controls."}}]}]}</script>
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ADsBlocking: Your Guide to a Clean & Ad-Free Web Experience">
-    <meta property="og:description" content="A comprehensive guide to stopping ads and trackers for a faster, safer web experience.">
+    <meta property="og:title" content="How to Block Ads: uBlock Origin, Firefox &amp; DNS Setup">
+    <meta property="og:description" content="Block ads and trackers everywhere: Firefox plus uBlock Origin, userscripts, and encrypted DNS through Cloudflare 1.1.1.1 or NextDNS. Free, ten minutes.">
     <meta property="og:url" content="https://adsblocking.qzz.io/">
     <meta property="og:image" content="https://adsblocking.qzz.io/preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ADsBlocking guide preview showing Firefox, uBlock Origin, and script manager setup">
+    <meta property="og:site_name" content="ADsBlocking Guide">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ADsBlocking: Your Guide to a Clean & Ad-Free Web Experience">
-    <meta name="twitter:description" content="A comprehensive guide to stopping ads and trackers for a faster, safer web experience.">
+    <meta name="twitter:title" content="How to Block Ads: uBlock Origin, Firefox &amp; DNS Setup">
+    <meta name="twitter:description" content="Block ads and trackers everywhere: Firefox plus uBlock Origin, userscripts, and encrypted DNS through Cloudflare 1.1.1.1 or NextDNS. Free, ten minutes.">
     <meta name="twitter:image" content="https://adsblocking.qzz.io/preview.png">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <meta name="twitter:image:alt" content="ADsBlocking guide preview showing Firefox, uBlock Origin, and script manager setup">
+    <link rel="icon" type="image/svg+xml" href="logo-favicon.svg" sizes="any">
 
     <script src="script.min.js" defer></script>
 </head>
@@ -45,14 +50,42 @@
     <nav class="nav" role="navigation">
         <div class="nav-container">
             <a class="nav-home" href="https://adsblocking.qzz.io/">
-                <div class="nav-title"><span class="nav-icon">🛡️</span> ADsBlocking</div>
+                <div class="nav-title">
+                    <svg class="nav-mark" aria-hidden="true" width="28" height="28" viewBox="0 0 64 64">
+                        <defs>
+                            <linearGradient id="navMarkGold" x1="0.12" y1="0" x2="0.88" y2="1">
+                                <stop offset="0" stop-color="currentColor" stop-opacity="0.96" />
+                                <stop offset="1" stop-color="currentColor" stop-opacity="0.62" />
+                            </linearGradient>
+                            <mask id="navMarkCut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+                                <rect x="0" y="0" width="64" height="64" fill="#fff" />
+                                <path d="M21 22 L40 41" fill="none" stroke="#000" stroke-width="7" />
+                            </mask>
+                        </defs>
+                        <g mask="url(#navMarkCut)">
+                            <path
+                                d="M17 6 H47 A6 6 0 0 1 53 12 V32 C53 44 45 52.5 32 58 C19 52.5 11 44 11 32 V12 A6 6 0 0 1 17 6 Z"
+                                fill="url(#navMarkGold)" />
+                            <path d="M21 22 L40 41" fill="none" stroke="#fff" stroke-opacity="0.38"
+                                stroke-width="9.6" />
+                            <path
+                                d="M17 6 H47 A6 6 0 0 1 53 12 V32 C53 44 45 52.5 32 58 C19 52.5 11 44 11 32 V12 A6 6 0 0 1 17 6 Z"
+                                fill="none" stroke="#000" stroke-opacity="0.22" stroke-width="1.4"
+                                transform="translate(32 32) scale(0.87) translate(-32 -32)" />
+                        </g>
+                    </svg>
+                    <span class="nav-wordmark"><span class="nav-word-accent">ADs</span><span
+                        class="nav-word-rest">Blocking</span></span>
+                </div>
             </a>
             <div class="nav-links">
                 <a href="#tools" class="nav-link">Tools</a>
                 <a href="#setup" class="nav-link">Setup</a>
+                <a href="#dns" class="nav-link">DNS</a>
                 <a href="#optional" class="nav-link">Optional</a>
                 <a href="#downloads" class="nav-link">Utilities</a>
                 <a href="#fcc" class="nav-link">Collection</a>
+                <a href="#faq" class="nav-link">FAQ</a>
 
             </div>
             <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -89,7 +122,7 @@
         </section>
 
         <section id="tools" class="section">                <div class="container">
-                <h2 class="section-title">The Tools</h2>
+                <h2 class="section-title">Ad Blocking Tools</h2>
                 <p class="section-description">
                     I use these daily. All open source, all solid.
                 </p>
@@ -194,7 +227,7 @@
         </section>
 
         <section id="setup" class="section section-alt">                <div class="container">
-                <h2 class="section-title">Step-by-Step</h2>
+                <h2 class="section-title">How to Block Ads, Step by Step</h2>
                 <p class="section-description">Do this in order. Setup takes only a few minutes.</p>
 
                 <div class="steps">
@@ -407,9 +440,258 @@
             </div>
         </section>
 
+        <!-- Whole-device filtering: what uBlock cannot see -->
+        <section id="dns" class="section">
+                <div class="container">
+                <h2 class="section-title">DNS-Level Blocking</h2>
+                <p class="section-description">
+                    Everything above only cleans up the browser. Your phone, your apps and every other device still
+                    ask your ISP where every domain lives. Encrypted DNS fixes that with one setting.
+                </p>
+
+                <div class="steps">
+                    <div id="cloudflare-dns" class="step-card">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">Cloudflare 1.1.1.1</h3>
+                        <p class="step-description">
+                            Fast, no account, nothing to log into. The plain resolver is below; the "Families"
+                            addresses also block malware (and adult content in the second one). All of it is encrypted.
+                        </p>
+
+                        <div class="dns-endpoints">
+                            <div class="dns-row">
+                                <span class="dns-label">DNS-over-HTTPS</span>
+                                <span class="dns-value">https://cloudflare-dns.com/dns-query</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">DoH (Families)</span>
+                                <span class="dns-value">https://security.cloudflare-dns.com/dns-query &middot;
+                                    https://family.cloudflare-dns.com/dns-query</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">DNS-over-TLS</span>
+                                <span class="dns-value">one.one.one.one</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">DoT (Families)</span>
+                                <span class="dns-value">security.cloudflare-dns.com &middot;
+                                    family.cloudflare-dns.com</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">IPv4</span>
+                                <span class="dns-value">1.1.1.1 &middot; 1.0.0.1</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">IPv6</span>
+                                <span class="dns-value">2606:4700:4700::1111 &middot; 2606:4700:4700::1001</span>
+                            </div>
+                        </div>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="7" y="2" width="10" height="20" rx="2" ry="2" />
+                                    <line x1="12" y1="18" x2="12.01" y2="18" />
+                                </svg>
+                                <strong>Android &mdash; Private DNS (TLS)</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <ol class="step-list">
+                                    <li>Settings &rarr; <strong>Network &amp; internet</strong> (on Samsung: Connections).</li>
+                                    <li>Tap <strong>Advanced</strong> &rarr; <strong>Private DNS</strong>.</li>
+                                    <li>Choose <strong>Private DNS provider hostname</strong>.</li>
+                                    <li>Enter <code>one.one.one.one</code> and hit <strong>Save</strong>.</li>
+                                </ol>
+                                <p>
+                                    Android only accepts a hostname here, not the <code>https://</code> URL &mdash;
+                                    this setting is DNS-over-TLS and covers Wi-Fi and mobile data at once.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="3" ry="3" />
+                                    <line x1="11" y1="19" x2="13" y2="19" />
+                                </svg>
+                                <strong>iPhone / iPad</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <p>
+                                    iOS has no DNS box to type into. Install the
+                                    <a href="https://one.one.one.one/" target="_blank" rel="noopener noreferrer">1.1.1.1
+                                        app</a> from the App Store &mdash; it drops in an encrypted DNS profile, and you can
+                                    switch to the Families resolver in its settings.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
+                                <strong>Windows 11 (DoH)</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <ol class="step-list">
+                                    <li>Settings &rarr; <strong>Network &amp; internet</strong> &rarr; <strong>Wi-Fi</strong>
+                                        (or Ethernet).</li>
+                                    <li>Open <strong>Hardware properties</strong> (skip this on Ethernet).</li>
+                                    <li>Click <strong>Edit</strong> next to DNS server assignment, then <strong>Manual</strong>.</li>
+                                    <li>Turn on <strong>IPv4</strong> and set Preferred DNS to <code>1.1.1.1</code>.</li>
+                                    <li>Set DNS over HTTPS to <strong>On (manual template)</strong> and enter
+                                        <code>https://cloudflare-dns.com/dns-query</code>.</li>
+                                    <li>Click <strong>Save</strong>.</li>
+                                </ol>
+                                <p>
+                                    In Firefox itself: Settings &rarr; Privacy &amp; Security &rarr; DNS over HTTPS &rarr;
+                                    <strong>Max Protection</strong>, then pick Custom and paste the same DoH address.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="nextdns" class="step-card">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">NextDNS</h3>
+                        <p class="step-description">
+                            Filters per device with your own blocklists, query log and parental controls, and it works
+                            on every platform. Free for 300,000 queries a month, then $1.99/month if you blow past it.
+                        </p>
+
+                        <div class="alert">
+                            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="12" />
+                                <line x1="12" y1="16" x2="12.01" y2="16" />
+                            </svg>
+                            <p>
+                                <strong>Your ID is yours alone.</strong> There is no shared NextDNS address, so don't copy
+                                the ones below &mdash; sign in at
+                                <a href="https://nextdns.io/" target="_blank" rel="noopener noreferrer">nextdns.io</a>
+                                and pull your endpoints from the Setup tab. A temporary account works for 7 days and only
+                                exists in that browser, so sign up free if you want your settings (and your filtering) to
+                                stick around.
+                            </p>
+                        </div>
+
+                        <div class="dns-endpoints">
+                            <div class="dns-row">
+                                <span class="dns-label">DNS-over-TLS/QUIC</span>
+                                <span class="dns-value">&lt;your-id&gt;.dns.nextdns.io</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">DNS-over-HTTPS</span>
+                                <span class="dns-value">https://dns.nextdns.io/&lt;your-id&gt;</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">IPv6</span>
+                                <span class="dns-value">2a07:a8c0::&hellip; &middot; 2a07:a8c1::&hellip;</span>
+                            </div>
+                            <div class="dns-row">
+                                <span class="dns-label">Linked IP</span>
+                                <span class="dns-value">45.90.28.x &middot; 45.90.30.x</span>
+                            </div>
+                        </div>
+
+                        <p class="step-description">
+                            The IPv6 pair and the linked-IP servers are per-profile, so take the exact values from your
+                            dashboard. Linked IP is plain DNS with no encryption &mdash; fine on a home router, not
+                            recommended on a phone.
+                        </p>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="7" y="2" width="10" height="20" rx="2" ry="2" />
+                                    <line x1="12" y1="18" x2="12.01" y2="18" />
+                                </svg>
+                                <strong>Android</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <ol class="step-list">
+                                    <li>Settings &rarr; <strong>Network &amp; internet</strong> &rarr;
+                                        <strong>Advanced</strong> &rarr; <strong>Private DNS</strong>.</li>
+                                    <li>Pick <strong>Private DNS provider hostname</strong>.</li>
+                                    <li>Enter <code>&lt;your-id&gt;.dns.nextdns.io</code> and save.</li>
+                                </ol>
+                                <p>
+                                    The NextDNS app for Android does the same thing and can also turn on per-app
+                                    filtering, but Private DNS is enough for most people.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="3" ry="3" />
+                                    <line x1="11" y1="19" x2="13" y2="19" />
+                                </svg>
+                                <strong>iPhone / iPad</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <p>
+                                    Don't type the server by hand &mdash; grab the configuration profile at
+                                    <a href="https://apple.nextdns.io/" target="_blank" rel="noopener noreferrer">apple.nextdns.io</a>
+                                    and install it (Settings &rarr; Profile Downloaded). It sets encrypted DNS the native
+                                    way. The NextDNS app from the App Store is the alternative.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
+                                <strong>Windows 11 (DoH)</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <p>
+                                    Same screen as the Cloudflare steps above. Preferred DNS stays <code>45.90.28.0</code>
+                                    and the DNS over HTTPS template becomes
+                                    <code>https://dns.nextdns.io/&lt;your-id&gt;</code>. Your dashboard prints exact
+                                    instructions for this too.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert">
+                        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        <p>
+                            <strong>Phones in one line:</strong> Android takes the hostname (
+                            <code>*.dns.nextdns.io</code> or <code>one.one.one.one</code>) in Private DNS; iPhone needs a
+                            profile or an app. The <code>https://</code> form is for browsers and Windows 11. Only pick
+                            one resolver &mdash; stacking NextDNS on top of Cloudflare leaves you with neither.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- More stuff you might want -->
         <section id="optional" class="section section-alt">                <div class="container">
-                <h2 class="section-title">Other Stuff</h2>
+                <h2 class="section-title">Optional Privacy Extensions</h2>
                 <p class="section-description">
                     Not required, but I use these to make things even cleaner.
                 </p>
@@ -522,7 +804,7 @@
 
         <!-- Utilities I actually use -->
         <section id="downloads" class="section">                <div class="container">
-                <h2 class="section-title">Utilities</h2>
+                <h2 class="section-title">Windows &amp; Android Utilities</h2>
                 <p class="section-description">
                     Utilities I actually install. Mostly Windows, with the Android ones last.
                 </p>
@@ -697,7 +979,7 @@
 
         <!-- find stuff here -->
         <section id="fcc" class="section">                <div class="container">
-                <h2 class="section-title">The Collection</h2>
+                <h2 class="section-title">Free Resource Collections</h2>
                 <p class="section-description">
                     Where I go to find free resources.
                 </p>
@@ -776,6 +1058,77 @@
 
             </div>
 
+        </section>
+
+        <!-- FAQ: also the source for the FAQPage structured data in <head> -->
+        <section id="faq" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">
+                    Short answers, with the step that covers each one.
+                </p>
+
+                <div class="faq">
+                    <div class="faq-item">
+                        <h3 class="faq-question">What is the best ad blocker?</h3>
+                        <p class="faq-answer">
+                            uBlock Origin. Free, open source, lighter than the alternatives, and its filter lists
+                            handle ads and trackers together. Install from <a href="#step-2">step 02</a>.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Does blocking ads break websites?</h3>
+                        <p class="faq-answer">
+                            Rarely. uBlock's Easy mode is the default and breaks almost nothing. If a site misbehaves,
+                            click the uBlock icon and turn blocking off for that site only &mdash;
+                            <a href="#step-5">step 05</a> covers it.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do I need a script manager?</h3>
+                        <p class="faq-answer">
+                            Only if you want to run userscripts like the link bypasser. Violentmonkey is the pick in
+                            <a href="#step-3">step 03</a>; if you install no scripts, skip it entirely.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Is all of this free?</h3>
+                        <p class="faq-answer">
+                            Yes. Every browser tool here is free and open source. NextDNS is free for 300,000 queries a
+                            month, then $1.99/month &mdash; details in <a href="#nextdns">the DNS section</a>.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What is DNS over HTTPS and should I use it?</h3>
+                        <p class="faq-answer">
+                            It encrypts the lookups that turn domain names into addresses. Set at the device level with
+                            <a href="#cloudflare-dns">Cloudflare 1.1.1.1</a> or <a href="#nextdns">NextDNS</a>, it also
+                            covers apps and other browsers that an extension can't reach. Only run one resolver.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Does this work on Chrome, Android or iPhone?</h3>
+                        <p class="faq-answer">
+                            This guide targets Firefox. Firefox on Android supports uBlock Origin. Chrome's full uBlock
+                            Origin was disabled by Manifest V3, leaving the reduced uBO Lite. On iPhone, use a Safari
+                            content blocker instead.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do I need both Cloudflare and NextDNS?</h3>
+                        <p class="faq-answer">
+                            No. Pick one. Cloudflare needs no account and is the simplest; NextDNS adds per-profile
+                            filtering, logs and parental controls.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="support" class="section">
@@ -1012,6 +1365,7 @@
                 </a>
             </p>
             <p class="footer-text">© <span id="year">2026</span> ADsBlocking Guide. All rights reserved.</p>
+            <p class="footer-text">Last updated <time datetime="2026-11-03">3 November 2026</time></p>
         </div>
     </footer>
 

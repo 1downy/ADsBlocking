@@ -15,6 +15,11 @@
 - [SponsorBlock](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)
 - [DeArrow](https://dearrow.ajay.app/)
 
+## DNS-Level Blocking
+- [NextDNS](https://nextdns.io/) - per-profile filtering (DoT: `<your-id>.dns.nextdns.io`, DoH: `https://dns.nextdns.io/<your-id>`)
+- [NextDNS Apple profiles](https://apple.nextdns.io/)
+- [Cloudflare 1.1.1.1](https://one.one.one.one/) - DoH: `https://cloudflare-dns.com/dns-query`, DoT: `one.one.one.one`
+
 ## Utilities
 - [MAS Windows Activation](https://massgrave.dev/)
 - [Clean OS ISOs](https://os.click/en)
@@ -24,6 +29,13 @@
 - [WinUtil by Chris Titus](https://github.com/ChrisTitusTech/winutil)
 - [Morphe](https://morphe.software/)
 - [ReVanced Non-Root](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root)
+
+## Quick Answers
+- Best ad blocker: uBlock Origin (free, open source).
+- Blocking ads rarely breaks sites; whitelist a site from the uBlock icon if it does.
+- A script manager is only needed for userscripts (Violentmonkey recommended).
+- Device-wide filtering: encrypted DNS via Cloudflare 1.1.1.1 or NextDNS. Use one, not both.
+- NextDNS free tier: 300,000 queries/month, then $1.99/month.
 
 ## Resource Collections
 - [FMHY](https://fmhy.net/)

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-labelledby="adsbLogoTitle adsbLogoDesc">
+    <title id="adsbLogoTitle">ADsBlocking</title>
+    <desc id="adsbLogoDesc">A gold shield with a beveled diagonal cut through it, marking blocked ads.</desc>
+    <defs>
+        <linearGradient id="adsbGold" x1="0.12" y1="0" x2="0.88" y2="1">
+            <stop offset="0" stop-color="#f4c96f"/>
+            <stop offset="1" stop-color="#c2862a"/>
+        </linearGradient>
+        <mask id="adsbCut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+            <rect x="0" y="0" width="64" height="64" fill="#fff"/>
+            <path d="M21 22 L40 41" fill="none" stroke="#000" stroke-width="7"/>
+        </mask>
+    </defs>
+    <g mask="url(#adsbCut)">
+        <path d="M17 6 H47 A6 6 0 0 1 53 12 V32 C53 44 45 52.5 32 58 C19 52.5 11 44 11 32 V12 A6 6 0 0 1 17 6 Z"
+            fill="url(#adsbGold)"/>
+        <path d="M21 22 L40 41" fill="none" stroke="#f8dda8" stroke-width="9.6"/>
+        <path d="M17 6 H47 A6 6 0 0 1 53 12 V32 C53 44 45 52.5 32 58 C19 52.5 11 44 11 32 V12 A6 6 0 0 1 17 6 Z"
+            fill="none" stroke="#0c0b0a" stroke-opacity="0.26" stroke-width="1.4"
+            transform="translate(32 32) scale(0.87) translate(-32 -32)"/>
+    </g>
+</svg>
