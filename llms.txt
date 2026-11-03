@@ -10,6 +10,7 @@
 
 ## Optional Extensions
 - [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
+- [Skip Redirect](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)
 - [Return YouTube Dislikes](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/)
 - [SponsorBlock](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)
 - [DeArrow](https://dearrow.ajay.app/)
@@ -35,6 +36,8 @@
 - [Violentmonkey](https://github.com/violentmonkey/violentmonkey)
 - [Tampermonkey](https://www.tampermonkey.net/)
 - [EFF (Privacy Badger)](https://www.eff.org/)
+- [sblask (Skip Redirect)](https://github.com/sblask/webextension-skip-redirect)
+- [DandelionSprout (URL Shortener Filter List)](https://github.com/DandelionSprout/adfilt)
 - [Return YouTube Dislikes](https://returnyoutubedislike.com/donate)
 - [SponsorBlock (Ajay Ramachandran)](https://sponsor.ajay.app/)
 - [Mozilla Foundation](https://www.mozilla.org/foundation/)

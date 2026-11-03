@@ -518,6 +518,16 @@ body {
     margin: 0;
 }
 
+.step-extra-content a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.step-extra-content a:hover {
+    text-decoration: underline;
+}
+
 code {
     background: var(--bg-alt);
     padding: 0.2rem 0.45rem;

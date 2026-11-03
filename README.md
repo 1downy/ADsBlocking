@@ -25,7 +25,7 @@
 
 ## The Tools
 
-I use these four daily. All open source, all solid.
+I use these daily. All open source, all solid.
 
 ### Firefox
 
@@ -47,7 +47,7 @@ Runs custom scripts on any site. I use it to skip link timers and clean up clutt
 
 ### Tampermonkey
 
-Another scripts manager. Use it if you don't like Violentmonkey for some reason. Does the same thing.
+Another script manager. Use it if you don't like Violentmonkey for some reason. It does the same thing.
 
 [Add to Firefox →](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
 
@@ -83,6 +83,15 @@ The only extension you really need.
 2. Hit "Add to Firefox"
 3. It starts working immediately. Check your toolbar.
 
+Then two minutes of setup worth doing:
+
+- Pick a [blocking mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode). Easy is the default and breaks nothing. Medium blocks more, but you'll have to unbreak a few sites by hand.
+- **Enable `AdGuard URL Tracking Protection`.** Open the dashboard, go to `Filter lists`, expand `Privacy` and tick it.
+- **Import the [Actually Legitimate URL Shortener Tool](https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt).** It strips tracking junk out of links before the page even loads.
+  - Go to `Filter lists` → `Custom` and tick `Import`.
+  - Paste in the URL from the link above.
+  - Click `Apply changes`.
+
 ### 03. Script Manager
 
 You need this to run custom scripts. Pick one:
@@ -100,6 +109,10 @@ This kills the "Wait 10s" junk.
 
 > **Note:** Check [gongchandang49's page](https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated/) sometimes for updates.
 
+> **Also grab Skip Redirect:** The script kills the timer pages, but some links still bounce you through a "you're now leaving" hop first. [Skip Redirect](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/) cuts that hop out so you land on the real page. Same destination, one less page.
+>
+> [Add to Firefox →](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/) \| [GitHub →](https://github.com/sblask/webextension-skip-redirect)
+
 ### 05. Filters & Sites
 
 Mess with the settings once you know what you're doing.
@@ -108,6 +121,8 @@ Mess with the settings once you know what you're doing.
 - Whitelist sites that aren't trash.
 - Find more scripts on [Greasyfork](https://greasyfork.org/).
 - That's it. Enjoy.
+
+> **Don't stack extensions:** uBlock Origin with the lists from step 02 already covers what most other extensions promise. Every extra extension gets privileged access to your browser, means trusting one more developer, can make you easier to fingerprint, and can weaken Firefox's site isolation. Skip the URL cleaners, cookie cleaners, local CDN hosts and extra tracker blockers — they mostly duplicate what Firefox and uBlock already do. Add something only when it fixes a problem you keep hitting.
 
 ---
 
@@ -120,6 +135,12 @@ Not required, but I use these to make things even cleaner.
 Sometimes redundant with uBlock. Still useful on sketchy sites.
 
 [Add to Firefox →](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
+
+### Skip Redirect
+
+Skips the "you're now leaving" hop between you and the link you clicked. Pairs with the URL tracking filter in step 02.
+
+[Add to Firefox →](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/) \| [GitHub →](https://github.com/sblask/webextension-skip-redirect)
 
 ### Return YT Dislikes
 
@@ -235,6 +256,8 @@ People spend their free time building these tools for us. If they save you time,
 - [Support gongchandang49 (Link Bypasser Scripts)](https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated/)
 - [Support Mozilla Foundation](https://www.mozilla.org/foundation/)
 - [Support EFF (Privacy Badger)](https://www.eff.org/pages/other-ways-give-and-donor-support)
+- [Support sblask (Skip Redirect)](https://github.com/sblask/webextension-skip-redirect)
+- [Support DandelionSprout (URL Shortener Filter List)](https://github.com/DandelionSprout/adfilt)
 - [Support Return YouTube Dislikes](https://returnyoutubedislike.com/donate)
 - [Support Ajay Ramachandran (SponsorBlock)](https://sponsor.ajay.app/)
 - [Support DeArrow](https://github.com/ajayyy/DeArrow)
@@ -254,7 +277,7 @@ People spend their free time building these tools for us. If they save you time,
 
 ## Disclaimer
 
-I don't host or mirror anything here. All links point to original sources, so if something breaks, changes, or disappears, that's on them not me. Always read what you're installing and understand what a script does before running it.
+I don't host or mirror anything here. All links point to original sources, so if something breaks, changes, or disappears, that's on them, not me. Always read what you're installing and understand what a script does before running it.
 
 ---
 

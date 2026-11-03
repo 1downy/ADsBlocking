@@ -105,7 +105,7 @@
             <div class="container">
                 <h2 class="section-title">The Tools</h2>
                 <p class="section-description">
-                    I use these four daily. All open source, all solid.
+                    I use these daily. All open source, all solid.
                 </p>
 
                 <div class="tools-grid">
@@ -176,8 +176,8 @@
                         </div>
                         <h3 class="tool-title">Tampermonkey</h3>
                         <p class="tool-description">
-                            Another scripts manager. Use it if you don't like Violentmonkey for some reason. Does the
-                            same thing.
+                            Another script manager. Use it if you don't like Violentmonkey for some reason. It does
+                            the same thing.
                         </p>
                         <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank"
                             rel="noopener noreferrer" class="tool-link">
@@ -263,6 +263,41 @@
                             <li>Hit "Add to Firefox"</li>
                             <li>It starts working immediately. Check your toolbar.</li>
                         </ol>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 6h16" />
+                                    <path d="M7 12h10" />
+                                    <path d="M10 18h4" />
+                                </svg>
+                                <strong>Two minutes of setup worth doing</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <ol class="step-list" style="margin-top: 0.5rem; padding-left: 1.25rem;">
+                                    <li>Pick a <a href="https://github.com/gorhill/uBlock/wiki/Blocking-mode"
+                                            target="_blank" rel="noopener noreferrer">blocking mode</a>. Easy is the
+                                        default and breaks nothing. Medium blocks more, but you'll have to unbreak a
+                                        few sites by hand.</li>
+                                    <li><strong>Enable <code>AdGuard URL Tracking Protection</code>.</strong> Open the
+                                        dashboard, go to <code>Filter lists</code>, expand <code>Privacy</code> and
+                                        tick it.</li>
+                                    <li><strong>Import the <a
+                                                href="https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
+                                                target="_blank" rel="noopener noreferrer">Actually Legitimate URL
+                                                Shortener Tool</a>.</strong> It strips tracking junk out of links
+                                        before the page even loads.
+                                        <ul style="margin: 0.4rem 0 0 1.25rem;">
+                                            <li>Go to <code>Filter lists</code> → <code>Custom</code> and tick
+                                                <code>Import</code>.</li>
+                                            <li>Paste in the URL from the link above.</li>
+                                            <li>Click <code>Apply changes</code>.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="step-3" class="step-card">
@@ -315,6 +350,33 @@
                                     target="_blank">gongchandang49's page</a> sometimes for updates.
                             </p>
                         </div>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 12h13" />
+                                    <polyline points="12 7 17 12 12 17" />
+                                    <path d="M20 5v14" />
+                                </svg>
+                                <strong>Also grab Skip Redirect</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <p>
+                                    The script kills the timer pages, but some links still bounce you through a
+                                    "you're now leaving" hop first. <a
+                                        href="https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/"
+                                        target="_blank" rel="noopener noreferrer">Skip Redirect</a> cuts that hop out
+                                    so you land on the real page. Same destination, one less page.
+                                </p>
+                                <p style="margin-top: 0.5rem;">
+                                    <a href="https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/"
+                                        target="_blank" rel="noopener noreferrer">Add to Firefox</a> |
+                                    <a href="https://github.com/sblask/webextension-skip-redirect" target="_blank"
+                                        rel="noopener noreferrer">GitHub</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -331,6 +393,31 @@
                                     rel="noopener noreferrer">Greasyfork</a>.</li>
                             <li>That's it. Enjoy.</li>
                         </ul>
+
+                        <div class="step-extra">
+                            <div class="step-extra-header">
+                                <svg class="step-extra-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                                <strong>Don't stack extensions</strong>
+                            </div>
+                            <div class="step-extra-content">
+                                <p>
+                                    uBlock Origin with the lists from step 02 already covers what most other extensions
+                                    promise. Every extra extension gets privileged access to your browser, means
+                                    trusting one more developer, can make you easier to fingerprint, and can weaken
+                                    Firefox's site isolation.
+                                </p>
+                                <p style="margin-top: 0.5rem;">
+                                    Skip the URL cleaners, cookie cleaners, local CDN hosts and extra tracker
+                                    blockers. They mostly duplicate what Firefox and uBlock already do. Add something
+                                    only when it fixes a problem you keep hitting.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,6 +449,32 @@
                             rel="noopener noreferrer" class="tool-link">
                             Add to Firefox →
                         </a>
+                    </div>
+
+                    <div class="tool-card" id="skip-redirect">
+                        <div class="tool-icon">
+                            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+                                <path d="M4 12h13" />
+                                <polyline points="12 7 17 12 12 17" />
+                                <path d="M20 5v14" />
+                            </svg>
+                        </div>
+                        <h3 class="tool-title">Skip Redirect</h3>
+                        <p class="tool-description">
+                            Skips the "you're now leaving" hop between you and the link you clicked. Pairs with the
+                            URL tracking filter in step 02.
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/" target="_blank"
+                                rel="noopener noreferrer" class="tool-link">
+                                Add to Firefox
+                            </a>
+                            <a href="https://github.com/sblask/webextension-skip-redirect" target="_blank"
+                                rel="noopener noreferrer" class="tool-link">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
 
                     <div class="tool-card" id="return-youtube-dislikes">
@@ -747,6 +860,24 @@
                             </svg>
                             Support EFF (Privacy Badger)
                         </a>
+                        <a href="https://github.com/sblask/webextension-skip-redirect" target="_blank"
+                            rel="noopener noreferrer" class="support-link">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support sblask (Skip Redirect)
+                        </a>
+                        <a href="https://github.com/DandelionSprout/adfilt" target="_blank"
+                            rel="noopener noreferrer" class="support-link">
+                            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" >
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Support DandelionSprout (URL Shortener Filter List)
+                        </a>
                         <a href="https://returnyoutubedislike.com/donate" target="_blank" rel="noopener noreferrer"
                             class="support-link">
                             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -883,7 +1014,7 @@
                     <p class="disclaimer-text">
                         I don’t host or mirror anything here.
                         All links point to original sources, so if something breaks, changes, or disappears,
-                        that’s on them not me.
+                        that’s on them, not me.
                         Always read what you’re installing and understand what a script does before running it.
                     </p>
 
